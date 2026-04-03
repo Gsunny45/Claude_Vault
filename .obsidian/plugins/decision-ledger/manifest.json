@@ -1,0 +1,9 @@
+{
+  "id": "decision-ledger",
+  "name": "Decision Ledger",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "author": "Claude",
+  "description": "Structured decision records with auto-incrementing IDs, alternatives tracking, and rationale chains.",
+  "isDesktopOnly": false
+}

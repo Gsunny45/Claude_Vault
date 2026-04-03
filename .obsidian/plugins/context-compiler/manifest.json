@@ -1,0 +1,9 @@
+{
+  "id": "context-compiler",
+  "name": "Context Compiler",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "author": "Claude",
+  "description": "Compiles token-budgeted briefing packets from vault notes for AI session warm-starts.",
+  "isDesktopOnly": false
+}

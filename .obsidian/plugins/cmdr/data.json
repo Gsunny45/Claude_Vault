@@ -1,0 +1,59 @@
+{
+  "confirmDeletion": true,
+  "showAddCommand": true,
+  "debug": false,
+  "editorMenu": [],
+  "fileMenu": [],
+  "leftRibbon": [
+    {
+      "id": "context-compiler:compile-briefing",
+      "name": "Compile Briefing",
+      "icon": "zap",
+      "color": "#e6a700",
+      "mode": 0
+    },
+    {
+      "id": "drift-detector:run-drift-scan",
+      "name": "Run Drift Scan",
+      "icon": "shield-alert",
+      "color": "#e65c00",
+      "mode": 0
+    },
+    {
+      "id": "quickadd:choice:qa-inbox",
+      "name": "Quick Capture",
+      "icon": "inbox",
+      "color": "#4c9aff",
+      "mode": 0
+    }
+  ],
+  "rightRibbon": [],
+  "titleBar": [],
+  "statusBar": [],
+  "pageHeader": [
+    {
+      "id": "drift-detector:show-drift-current",
+      "name": "Check Drift",
+      "icon": "search-check",
+      "color": "",
+      "mode": 0
+    }
+  ],
+  "macros": [],
+  "explorer": [],
+  "hide": {
+    "statusbar": [],
+    "leftRibbon": []
+  },
+  "spacing": 8,
+  "advancedToolbar": {
+    "rowHeight": 48,
+    "rowCount": 1,
+    "spacing": 0,
+    "buttonWidth": 48,
+    "columnLayout": false,
+    "mappedIcons": [],
+    "tooltips": true,
+    "heightOffset": 0
+  }
+}

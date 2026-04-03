@@ -1,0 +1,20 @@
+[
+  "dataview",
+  "templater-obsidian",
+  "obsidian-local-rest-api",
+  "periodic-notes",
+  "context-compiler",
+  "decision-ledger",
+  "drift-detector",
+  "obsidian-linter",
+  "tag-wrangler",
+  "quickadd",
+  "obsidian-meta-bind-plugin",
+  "cmdr",
+  "obsidian-git",
+  "homepage",
+  "calendar",
+  "obsidian-kanban",
+  "obsidian-tasks-plugin",
+  "obsidian-excalidraw-plugin"
+]

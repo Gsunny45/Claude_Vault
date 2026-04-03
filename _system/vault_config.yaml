@@ -1,0 +1,38 @@
+# Claude Vault — Operational Configuration
+# This file is read by custom plugins and by AI agents at session start.
+
+vault:
+  name: "Claude Vault"
+  version: "0.1.0"
+  owner: "ai"  # not a human vault
+  path: "C:\\Users\\MarsBase\\Documents\\Claude_Vault"
+
+context_compiler:
+  token_budget: 8000          # max tokens for a briefing packet
+  priority_weights:
+    recency: 0.3              # how recently the note was modified
+    change_delta: 0.3         # how much changed since last session
+    link_centrality: 0.2      # how connected the note is
+    declared_importance: 0.2  # explicit priority tag
+  briefing_output: "_system/_briefing.md"
+  stale_threshold_days: 7     # flag notes not verified in this window
+
+decision_ledger:
+  id_prefix: "DEC"
+  auto_increment: true
+  require_alternatives: true  # every decision must list at least one alternative
+  require_rationale: true
+
+drift_detector:
+  scan_interval: "on_open"    # run when vault opens
+  output: "_system/_drift_report.md"
+  severity_levels:
+    - contradiction           # two notes make incompatible claims
+    - stale_reference         # note links to something that changed
+    - orphan                  # note has no inbound links and no recent access
+    - schema_violation        # note doesn't match _schemas.yaml
+
+session:
+  id_format: "SES-{date}-{seq}"
+  auto_close_after_hours: 4
+  log_files_accessed: true

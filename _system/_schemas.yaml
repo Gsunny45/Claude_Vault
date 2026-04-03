@@ -1,0 +1,74 @@
+# Schema definitions for all note types in this vault.
+# Every note MUST match one of these schemas.
+# The drift-detector plugin validates against this file.
+
+decision:
+  folder: decisions/
+  required:
+    - type: "decision"
+    - id: string          # unique, e.g. DEC-0001
+    - title: string
+    - date: date
+    - status: enum [proposed, accepted, superseded, rejected]
+    - context: string     # what prompted this decision
+    - alternatives: list  # other options considered
+    - rationale: string   # why THIS option won
+  optional:
+    - supersedes: string  # id of decision this replaces
+    - affects: list       # file paths or note links impacted
+    - tokens: number      # estimated token cost to load this note
+
+session:
+  folder: sessions/
+  required:
+    - type: "session"
+    - id: string          # e.g. SES-2026-04-02-001
+    - date: date
+    - agent: enum [claude-code, claude-desktop, claude-api, local]
+    - status: enum [active, closed]
+  optional:
+    - parent_session: string
+    - files_read: list
+    - files_written: list
+    - decisions_made: list
+    - tokens_used: number
+    - summary: string
+
+knowledge:
+  folder: knowledge/
+  required:
+    - type: "knowledge"
+    - id: string
+    - subject: string
+    - confidence: enum [verified, inferred, stale]
+    - last_verified: date
+  optional:
+    - source: string      # how this was derived (file read, user stated, inferred)
+    - tokens: number
+    - related: list
+
+task:
+  folder: tasks/
+  required:
+    - type: "task"
+    - id: string
+    - title: string
+    - status: enum [open, in_progress, blocked, done, cancelled]
+    - created: date
+  optional:
+    - assigned_session: string
+    - depends_on: list
+    - completed: date
+    - outcome: string
+
+briefing:
+  folder: _system/
+  required:
+    - type: "briefing"
+    - compiled: datetime
+    - token_budget: number
+    - token_actual: number
+    - scope: string       # what this briefing covers
+  optional:
+    - notes_included: list
+    - notes_excluded_reason: list

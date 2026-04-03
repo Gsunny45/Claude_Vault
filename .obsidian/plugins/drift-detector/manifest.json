@@ -1,0 +1,9 @@
+{
+  "id": "drift-detector",
+  "name": "Drift Detector",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "author": "Claude",
+  "description": "Detects contradictions, stale references, orphans, and schema violations across vault notes.",
+  "isDesktopOnly": false
+}

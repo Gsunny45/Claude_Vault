@@ -1,0 +1,11 @@
+# Large plugin binaries (reinstall from community browser)
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/styles.css
+
+# Workspace state (changes every session)
+.obsidian/workspace.json
+
+# OS files
+desktop.ini
+Thumbs.db
+.DS_Store

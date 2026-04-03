@@ -1,0 +1,23 @@
+{
+  "context-compiler:compile-briefing": [
+    { "modifiers": ["Ctrl", "Shift"], "key": "B" }
+  ],
+  "drift-detector:run-drift-scan": [
+    { "modifiers": ["Ctrl", "Shift"], "key": "D" }
+  ],
+  "drift-detector:open-drift-report": [
+    { "modifiers": ["Ctrl", "Shift"], "key": "R" }
+  ],
+  "decision-ledger:create-new-decision": [
+    { "modifiers": ["Ctrl", "Shift"], "key": "N" }
+  ],
+  "decision-ledger:build-decision-index": [
+    { "modifiers": ["Ctrl", "Shift"], "key": "I" }
+  ],
+  "quickadd:choice:qa-inbox": [
+    { "modifiers": ["Ctrl", "Shift"], "key": "C" }
+  ],
+  "quickadd:choice:qa-new-task": [
+    { "modifiers": ["Ctrl", "Shift"], "key": "T" }
+  ]
+}

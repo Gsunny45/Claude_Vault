@@ -1,0 +1,8 @@
+{
+  "strictLineBreaks": true,
+  "showFrontmatter": true,
+  "readableLineLength": false,
+  "defaultViewMode": "source",
+  "livePreview": false,
+  "spellcheck": false
+}
