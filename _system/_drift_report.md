@@ -1,25 +1,34 @@
 ---
 type: drift_report
-scanned: 2026-04-03T08:45:33.450Z
-total_notes: 22
-issues_found: 7
+scanned: 2026-04-03T22:30:52.286Z
+total_notes: 155
+issues_found: 12
 critical: 0
-high: 0
+high: 5
 medium: 7
 low: 0
 ---
 
-# Drift Report — 2026-04-03 08:45
+# Drift Report — 2026-04-03 22:30
 
 ## Summary
-Scanned 22 notes. Found 7 issues.
+Scanned 155 notes. Found 12 issues.
 
 | Severity | Count |
 |----------|-------|
 | Critical | 0 |
-| High | 0 |
+| High | 5 |
 | Medium | 7 |
 | Low | 0 |
+
+## High Issues
+
+### Schema Violations (Missing Fields)
+- `sessions/daily/2024-01-26.md`: missing required field `type` (expected: session)
+- `sessions/daily/2024-01-26.md`: missing required field `id` (expected: string)
+- `sessions/daily/2024-01-26.md`: missing required field `date` (expected: date)
+- `sessions/daily/2024-01-26.md`: missing required field `agent` (expected: enum)
+- `sessions/daily/2024-01-26.md`: missing required field `status` (expected: enum)
 
 ## Medium Issues
 
