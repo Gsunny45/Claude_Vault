@@ -19,5 +19,23 @@
   ],
   "quickadd:choice:qa-new-task": [
     { "modifiers": ["Ctrl", "Shift"], "key": "T" }
+  ],
+  "quickadd:choice:qa-new-knowledge": [
+    { "modifiers": ["Ctrl", "Shift"], "key": "K" }
+  ],
+  "quickadd:choice:qa-new-session": [
+    { "modifiers": ["Ctrl", "Shift"], "key": "S" }
+  ],
+  "app:go-back": [
+    { "modifiers": ["Alt"], "key": "ArrowLeft" }
+  ],
+  "app:go-forward": [
+    { "modifiers": ["Alt"], "key": "ArrowRight" }
+  ],
+  "graph:open": [
+    { "modifiers": ["Ctrl", "Shift"], "key": "G" }
+  ],
+  "switcher:open": [
+    { "modifiers": ["Ctrl", "Shift"], "key": "O" }
   ]
 }

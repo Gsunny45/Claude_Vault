@@ -1,0 +1,161 @@
+/* ═══════════════════════════════════════════
+   Claude Vault — AI Operational Theme
+   Dark, clean, high-contrast for machine data
+   ═══════════════════════════════════════════ */
+
+/* ── Frontmatter ────────────────────────── */
+.metadata-container {
+  background-color: var(--background-secondary);
+  border-left: 3px solid var(--interactive-accent);
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  font-family: var(--font-monospace);
+  font-size: 13px;
+}
+
+/* ── Dataview tables ────────────────────── */
+.dataview.table-view-table {
+  font-size: 14px;
+  border-collapse: collapse;
+}
+
+.dataview.table-view-table th {
+  background-color: var(--background-secondary-alt);
+  color: var(--text-accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--interactive-accent);
+}
+
+.dataview.table-view-table td {
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.dataview.table-view-table tr:hover td {
+  background-color: var(--background-secondary);
+}
+
+/* ── Severity colors (for drift report, health) ── */
+.markdown-preview-view strong:has(+ em) {
+  /* fallback - not all selectors work in Obsidian */
+}
+
+/* Tag severity styling */
+.tag[href="#critical"] {
+  background-color: #ff4444 !important;
+  color: white !important;
+}
+.tag[href="#high"] {
+  background-color: #ff8c00 !important;
+  color: white !important;
+}
+.tag[href="#medium"] {
+  background-color: #e6a700 !important;
+  color: black !important;
+}
+.tag[href="#low"] {
+  background-color: #4c9aff !important;
+  color: white !important;
+}
+
+/* Status tags */
+.tag[href="#open"] {
+  background-color: #4c9aff !important;
+  color: white !important;
+}
+.tag[href="#in_progress"],
+.tag[href="#in-progress"] {
+  background-color: #e6a700 !important;
+  color: black !important;
+}
+.tag[href="#done"],
+.tag[href="#completed"] {
+  background-color: #2ea043 !important;
+  color: white !important;
+}
+.tag[href="#blocked"] {
+  background-color: #ff4444 !important;
+  color: white !important;
+}
+.tag[href="#accepted"] {
+  background-color: #2ea043 !important;
+  color: white !important;
+}
+.tag[href="#superseded"] {
+  background-color: #8b5cf6 !important;
+  color: white !important;
+}
+.tag[href="#stale"] {
+  background-color: #ff8c00 !important;
+  color: white !important;
+}
+.tag[href="#verified"] {
+  background-color: #2ea043 !important;
+  color: white !important;
+}
+
+/* ── Dashboard heading styling ──────────── */
+.markdown-preview-view h1 {
+  border-bottom: 2px solid var(--interactive-accent);
+  padding-bottom: 8px;
+}
+
+.markdown-preview-view h2 {
+  color: var(--text-accent);
+  margin-top: 2em;
+}
+
+/* ── Code blocks (for Dataview queries) ─── */
+.markdown-preview-view pre {
+  border-left: 3px solid var(--interactive-accent);
+  border-radius: 0 4px 4px 0;
+}
+
+/* ── Callout customization ──────────────── */
+.callout[data-callout="drift"] {
+  --callout-color: 255, 140, 0;
+  --callout-icon: shield-alert;
+}
+.callout[data-callout="decision"] {
+  --callout-color: 230, 167, 0;
+  --callout-icon: scale;
+}
+.callout[data-callout="knowledge"] {
+  --callout-color: 76, 154, 255;
+  --callout-icon: brain;
+}
+
+/* ── Graph view enhancements ────────────── */
+.graph-view.color-fill-focused {
+  color: var(--interactive-accent);
+}
+
+/* ── Clean sidebar ──────────────────────── */
+.nav-file-title {
+  font-size: 13px;
+}
+
+.nav-folder-title {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+/* ── Kanban board adjustments ───────────── */
+.kanban-plugin__board {
+  gap: 12px;
+}
+
+.kanban-plugin__lane-title-text {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
