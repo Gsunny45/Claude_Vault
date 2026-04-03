@@ -1,7 +1,12 @@
 {
   "command_timeout": 5,
   "templates_folder": "_templates",
-  "templates_pairs": [["", ""]],
+  "templates_pairs": [
+    [
+      "",
+      ""
+    ]
+  ],
   "trigger_on_file_creation": true,
   "auto_jump_to_cursor": true,
   "enable_system_commands": false,
@@ -9,16 +14,37 @@
   "user_scripts_folder": "",
   "enable_folder_templates": true,
   "folder_templates": [
-    { "folder": "decisions", "template": "_templates/decision.md" },
-    { "folder": "sessions", "template": "_templates/session.md" },
-    { "folder": "knowledge", "template": "_templates/knowledge.md" },
-    { "folder": "tasks", "template": "_templates/task.md" }
+    {
+      "folder": "decisions",
+      "template": "_templates/decision.md"
+    },
+    {
+      "folder": "sessions",
+      "template": "_templates/session.md"
+    },
+    {
+      "folder": "knowledge",
+      "template": "_templates/knowledge.md"
+    },
+    {
+      "folder": "tasks",
+      "template": "_templates/task.md"
+    }
   ],
   "enable_file_templates": false,
-  "file_templates": [{ "regex": ".*", "template": "" }],
+  "file_templates": [
+    {
+      "regex": ".*",
+      "template": ""
+    }
+  ],
   "syntax_highlighting": true,
   "syntax_highlighting_mobile": false,
-  "enabled_templates_hotkeys": [""],
-  "startup_templates": [""],
+  "enabled_templates_hotkeys": [
+    ""
+  ],
+  "startup_templates": [
+    ""
+  ],
   "intellisense_render": 1
 }

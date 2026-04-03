@@ -6,13 +6,27 @@
       "type": "Template",
       "command": true,
       "templatePath": "_templates/decision.md",
-      "fileNameFormat": { "enabled": true, "format": "DEC-{{VALUE}}" },
-      "folder": { "enabled": true, "folders": ["decisions"], "chooseWhenCreatingNote": false, "createInSameFolderAsActiveFile": false },
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "DEC-{{VALUE}}"
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "decisions"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false
+      },
       "fileExistsMode": "Increment the file name",
       "openFile": true,
       "openFileInMode": "source",
       "setFileExistsBehavior": false,
-      "openFileInNewTab": { "enabled": false, "direction": "vertical", "focus": true }
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      }
     },
     {
       "id": "qa-new-session",
@@ -20,13 +34,27 @@
       "type": "Template",
       "command": true,
       "templatePath": "_templates/session.md",
-      "fileNameFormat": { "enabled": true, "format": "SES-{{DATE:YYYY-MM-DD}}-{{VALUE}}" },
-      "folder": { "enabled": true, "folders": ["sessions"], "chooseWhenCreatingNote": false, "createInSameFolderAsActiveFile": false },
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "SES-{{DATE:YYYY-MM-DD}}-{{VALUE}}"
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "sessions"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false
+      },
       "fileExistsMode": "Increment the file name",
       "openFile": true,
       "openFileInMode": "source",
       "setFileExistsBehavior": false,
-      "openFileInNewTab": { "enabled": false, "direction": "vertical", "focus": true }
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      }
     },
     {
       "id": "qa-new-knowledge",
@@ -34,13 +62,27 @@
       "type": "Template",
       "command": true,
       "templatePath": "_templates/knowledge.md",
-      "fileNameFormat": { "enabled": true, "format": "KNW-{{VALUE}}" },
-      "folder": { "enabled": true, "folders": ["knowledge"], "chooseWhenCreatingNote": false, "createInSameFolderAsActiveFile": false },
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "KNW-{{VALUE}}"
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "knowledge"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false
+      },
       "fileExistsMode": "Increment the file name",
       "openFile": true,
       "openFileInMode": "source",
       "setFileExistsBehavior": false,
-      "openFileInNewTab": { "enabled": false, "direction": "vertical", "focus": true }
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      }
     },
     {
       "id": "qa-new-task",
@@ -48,13 +90,27 @@
       "type": "Template",
       "command": true,
       "templatePath": "_templates/task.md",
-      "fileNameFormat": { "enabled": true, "format": "TSK-{{VALUE}}" },
-      "folder": { "enabled": true, "folders": ["tasks"], "chooseWhenCreatingNote": false, "createInSameFolderAsActiveFile": false },
+      "fileNameFormat": {
+        "enabled": true,
+        "format": "TSK-{{VALUE}}"
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "tasks"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false
+      },
       "fileExistsMode": "Increment the file name",
       "openFile": true,
       "openFileInMode": "source",
       "setFileExistsBehavior": false,
-      "openFileInNewTab": { "enabled": false, "direction": "vertical", "focus": true }
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      }
     },
     {
       "id": "qa-inbox",
@@ -63,14 +119,27 @@
       "command": true,
       "captureToActiveFile": false,
       "captureTo": "inbox/{{DATE:YYYY-MM-DD}}.md",
-      "createFileIfItDoesntExist": { "enabled": true, "createWithTemplate": false },
-      "format": { "enabled": true, "format": "\n---\n**{{DATE:HH:mm}}** — {{VALUE}}\n" },
+      "createFileIfItDoesntExist": {
+        "enabled": true,
+        "createWithTemplate": false
+      },
+      "format": {
+        "enabled": true,
+        "format": "\n---\n**{{DATE:HH:mm}}** — {{VALUE}}\n"
+      },
       "task": false,
       "prepend": false,
-      "insertAfter": { "enabled": false, "after": "" },
+      "insertAfter": {
+        "enabled": false,
+        "after": ""
+      },
       "openFile": false,
       "openFileInMode": "source",
-      "openFileInNewTab": { "enabled": false, "direction": "vertical", "focus": true }
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      }
     }
   ],
   "inputPrompt": "single-line",
@@ -86,7 +155,7 @@
   "enableRibbonIcon": true,
   "showCaptureNotification": true,
   "showInputCancellationNotification": false,
-  "enableTemplatePropertyTypes": false,
+  "enableTemplatePropertyTypes": true,
   "dateAliases": {
     "t": "today",
     "tm": "tomorrow",

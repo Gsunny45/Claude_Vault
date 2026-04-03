@@ -51,7 +51,19 @@
     "template": "_templates/weekly.md",
     "folder": "sessions/weekly"
   },
-  "monthly": { "format": "", "template": "", "folder": "" },
-  "quarterly": { "format": "", "template": "", "folder": "" },
-  "yearly": { "format": "", "template": "", "folder": "" }
+  "monthly": {
+    "format": "",
+    "template": "",
+    "folder": ""
+  },
+  "quarterly": {
+    "format": "",
+    "template": "",
+    "folder": ""
+  },
+  "yearly": {
+    "format": "",
+    "template": "",
+    "folder": ""
+  }
 }
