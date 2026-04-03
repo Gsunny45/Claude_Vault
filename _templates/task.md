@@ -1,6 +1,6 @@
 ---
 type: task
-id: <% "TSK-" + String(Math.max(0, ...app.vault.getMarkdownFiles().filter(f => f.path.startsWith("tasks/TSK-")).map(f => parseInt(f.basename.replace("TSK-","")) || 0)) + 1).padStart(4, "0") %>
+id: <% tp.user.next_id("TSK", "tasks") %>
 title: "<% tp.file.cursor(1) %>"
 status: open
 created: <% tp.date.now("YYYY-MM-DD") %>

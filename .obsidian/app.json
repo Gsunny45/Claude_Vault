@@ -4,5 +4,6 @@
   "readableLineLength": false,
   "defaultViewMode": "source",
   "livePreview": false,
-  "spellcheck": false
+  "spellcheck": false,
+  "promptDelete": false
 }

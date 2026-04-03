@@ -1,6 +1,6 @@
 ---
 type: decision
-id: <% "DEC-" + String(Math.max(0, ...app.vault.getMarkdownFiles().filter(f => f.path.startsWith("decisions/DEC-")).map(f => parseInt(f.basename.replace("DEC-","")) || 0)) + 1).padStart(4, "0") %>
+id: <% tp.user.next_id("DEC", "decisions") %>
 title: "<% tp.file.cursor(1) %>"
 date: <% tp.date.now("YYYY-MM-DD") %>
 status: accepted

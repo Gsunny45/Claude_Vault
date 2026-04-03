@@ -10,31 +10,36 @@
         "format": "YYYY-MM-DD",
         "folder": "sessions/daily",
         "openAtStartup": false,
-        "templatePath": "_templates/daily.md"
+        "templatePath": "_templates/daily.md",
+        "enabled": true
       },
       "week": {
         "format": "YYYY-[W]ww",
         "folder": "sessions/weekly",
         "openAtStartup": false,
-        "templatePath": "_templates/weekly.md"
+        "templatePath": "_templates/weekly.md",
+        "enabled": true
       },
       "month": {
         "format": "",
         "folder": "",
         "openAtStartup": false,
-        "templatePath": ""
+        "templatePath": "",
+        "enabled": true
       },
       "quarter": {
         "format": "",
         "folder": "",
         "openAtStartup": false,
-        "templatePath": ""
+        "templatePath": "",
+        "enabled": true
       },
       "year": {
-        "format": "",
+        "format": "YYYY",
         "folder": "",
         "openAtStartup": false,
-        "templatePath": ""
+        "templatePath": "",
+        "enabled": true
       },
       "id": "Default",
       "ctime": "2026-04-02T18:25:02-07:00"

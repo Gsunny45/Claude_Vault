@@ -37,5 +37,20 @@
   ],
   "switcher:open": [
     { "modifiers": ["Ctrl", "Shift"], "key": "O" }
+  ],
+  "templater-obsidian:_templates/decision.md": [
+    { "modifiers": ["Alt", "Shift"], "key": "D" }
+  ],
+  "templater-obsidian:_templates/knowledge.md": [
+    { "modifiers": ["Alt", "Shift"], "key": "K" }
+  ],
+  "templater-obsidian:_templates/task.md": [
+    { "modifiers": ["Alt", "Shift"], "key": "T" }
+  ],
+  "templater-obsidian:_templates/session.md": [
+    { "modifiers": ["Alt", "Shift"], "key": "S" }
+  ],
+  "templater-obsidian:_templates/daily.md": [
+    { "modifiers": ["Alt", "Shift"], "key": "N" }
   ]
 }

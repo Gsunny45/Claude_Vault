@@ -1,50 +1,37 @@
 {
-  "command_timeout": 5,
+  "command_timeout": 10,
   "templates_folder": "_templates",
-  "templates_pairs": [
-    [
-      "",
-      ""
-    ]
-  ],
+  "templates_pairs": [["", ""]],
   "trigger_on_file_creation": true,
   "auto_jump_to_cursor": true,
-  "enable_system_commands": false,
+  "enable_system_commands": true,
   "shell_path": "",
-  "user_scripts_folder": "",
+  "user_scripts_folder": "_scripts",
   "enable_folder_templates": true,
   "folder_templates": [
-    {
-      "folder": "decisions",
-      "template": "_templates/decision.md"
-    },
-    {
-      "folder": "sessions",
-      "template": "_templates/session.md"
-    },
-    {
-      "folder": "knowledge",
-      "template": "_templates/knowledge.md"
-    },
-    {
-      "folder": "tasks",
-      "template": "_templates/task.md"
-    }
+    { "folder": "decisions", "template": "_templates/decision.md" },
+    { "folder": "sessions", "template": "_templates/session.md" },
+    { "folder": "knowledge", "template": "_templates/knowledge.md" },
+    { "folder": "tasks", "template": "_templates/task.md" }
   ],
-  "enable_file_templates": false,
+  "enable_file_templates": true,
   "file_templates": [
-    {
-      "regex": ".*",
-      "template": ""
-    }
+    { "regex": "^DEC-\\d+", "template": "_templates/decision.md" },
+    { "regex": "^KNW-\\d+", "template": "_templates/knowledge.md" },
+    { "regex": "^TSK-\\d+", "template": "_templates/task.md" },
+    { "regex": "^SES-\\d{4}-\\d{2}-\\d{2}", "template": "_templates/session.md" }
   ],
   "syntax_highlighting": true,
   "syntax_highlighting_mobile": false,
   "enabled_templates_hotkeys": [
-    ""
+    "_templates/decision.md",
+    "_templates/knowledge.md",
+    "_templates/task.md",
+    "_templates/session.md",
+    "_templates/daily.md"
   ],
   "startup_templates": [
-    ""
+    "_templates/startup.md"
   ],
   "intellisense_render": 1
 }

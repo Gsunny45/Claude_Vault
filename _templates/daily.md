@@ -1,6 +1,8 @@
 ---
-type: daily
-date: <% tp.date.now("YYYY-MM-DD") %>
+date: <%tp.date.now("YYYY-MM-DD")%>T<%tp.date.now("HH:mm")%>
+tags:
+  - Daily
+cssclasses: <% "- " + tp.date.now("dddd", 0, tp.file.title, "YYYYMMDD").toLowerCase() %>
 ---
 
 # Daily Log — <% tp.date.now("YYYY-MM-DD") %>
@@ -36,3 +38,7 @@ WHERE type = "task" AND (created = date("<% tp.date.now("YYYY-MM-DD") %>") OR co
 
 ## Notes
 
+### Tasks
+- [ ] Task 1
+- [ ] Task 2
+- [ ] Task 3
