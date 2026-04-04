@@ -1,3 +1,7 @@
 {
-  "show-checkboxes": true
+  "show-checkboxes": true,
+  "date-format": "YYYY-MM-DD",
+  "time-format": "HH:MM",
+  "date-display-format": "YYYYY-MM-DD",
+  "archive-date-format": "YYYY-MM-DD-HH-MM"
 }

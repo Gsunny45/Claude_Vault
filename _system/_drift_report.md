@@ -1,7 +1,7 @@
 ---
 type: drift_report
-scanned: 2026-04-03T22:30:52.286Z
-total_notes: 155
+scanned: 2026-04-04T03:50:51.001Z
+total_notes: 28
 issues_found: 12
 critical: 0
 high: 5
@@ -9,10 +9,10 @@ medium: 7
 low: 0
 ---
 
-# Drift Report — 2026-04-03 22:30
+# Drift Report — 2026-04-04 03:50
 
 ## Summary
-Scanned 155 notes. Found 12 issues.
+Scanned 28 notes. Found 12 issues.
 
 | Severity | Count |
 |----------|-------|

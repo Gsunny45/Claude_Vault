@@ -3,6 +3,7 @@
   "taskCompletionTracking": true,
   "taskCompletionUseEmojiShorthand": false,
   "taskCompletionText": "completion",
+  "taskCompletionDateFormat": "yyyy-MM-dd",
   "recursiveSubTaskCompletion": false,
   "warnOnEmptyResult": true,
   "refreshEnabled": true,
@@ -17,8 +18,10 @@
   "inlineQueryPrefix": "=",
   "inlineJsQueryPrefix": "$=",
   "inlineQueriesInCodeblocks": true,
+  "enableInlineDataview": true,
   "enableDataviewJs": true,
   "enableInlineDataviewJs": true,
   "prettyRenderInlineFields": true,
-  "prettyRenderInlineFieldsInLivePreview": true
+  "prettyRenderInlineFieldsInLivePreview": true,
+  "dataviewJsKeyword": "dataviewjs"
 }
