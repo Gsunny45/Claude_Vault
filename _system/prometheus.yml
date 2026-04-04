@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 60s
+  evaluation_interval: 60s
+
+scrape_configs:
+  - job_name: "vault_exporter"
+    static_configs:
+      # Use host.docker.internal when running Prometheus in Docker
+      # Use localhost when running Prometheus directly on host/WSL
+      - targets: ["host.docker.internal:9090"]
+        labels:
+          instance: "vault-exporter"
