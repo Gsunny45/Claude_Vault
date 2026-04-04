@@ -1,25 +1,30 @@
 ---
 type: drift_report
-scanned: 2026-04-04T04:51:08.616Z
-total_notes: 28
-issues_found: 12
-critical: 0
+scanned: 2026-04-04T08:18:27.992Z
+total_notes: 32
+issues_found: 13
+critical: 1
 high: 5
 medium: 7
 low: 0
 ---
 
-# Drift Report — 2026-04-04 04:51
+# Drift Report — 2026-04-04 08:18
 
 ## Summary
-Scanned 28 notes. Found 12 issues.
+Scanned 32 notes. Found 13 issues.
 
 | Severity | Count |
 |----------|-------|
-| Critical | 0 |
+| Critical | 1 |
 | High | 5 |
 | Medium | 7 |
 | Low | 0 |
+
+## Critical Issues
+
+### Duplicate IDs
+- `knowledge/KNW-0006.md` and `13 keyboard shortcuts.md` both claim id: `KNW-0006` — **one must be renamed**
 
 ## High Issues
 

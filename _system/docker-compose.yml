@@ -1,12 +1,10 @@
-version: "3.8"
-
 # Vault monitoring stack — Prometheus + Grafana
 # Run: docker-compose up -d
 # Or on WSL/Kali: docker compose up -d
 #
 # Vault exporter runs on host: python vault_exporter.py
 # Prometheus scrapes localhost:9090/metrics
-# Grafana dashboard at http://localhost:3000 (admin/admin)
+# Grafana dashboard at http://localhost:3000 (admin/vaultops)
 
 services:
   prometheus:

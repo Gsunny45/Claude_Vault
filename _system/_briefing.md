@@ -1,14 +1,18 @@
 ---
 type: briefing
-compiled: "2026-04-04T04:51:08Z"
+compiled: "2026-04-04T08:18:27Z"
 token_budget: 8000
-token_actual: 7947
+token_actual: 7915
 scope: auto-compiled
 notes_included:
   - "inbox/2026-04-03.md"
-  - "Dashboard.md"
+  - "inbox/2026-04-04.md"
+  - "CLAUDE.md"
+  - "knowledge/KNW-0007.md"
+  - "knowledge/KNW-0006.md"
   - "knowledge/KNW-0005.md"
   - "knowledge/KNW-0003.md"
+  - "Dashboard.md"
   - "Vault_Health.md"
   - "_templates/task.md"
   - "_templates/knowledge.md"
@@ -17,177 +21,172 @@ notes_included:
   - "sessions/daily/2024-01-26.md"
   - "_templates/Preloaded Classes/202401211512 Notebook CSS Classes.md"
   - "_templates/Preloaded Classes/202403091325 General Tweaks CSS Classes.md"
-  - "_templates/daily.md"
   - "tasks/TSK-0002.md"
   - "tasks/TSK-0001.md"
-  - "knowledge/KNW-0004.md"
-  - "13 keyboard shortcuts.md"
-  - "Task_Board.md"
-  - "README.md"
 notes_excluded_reason:
-  - path: "decisions/DEC-0001.md"
-    reason: "token budget exceeded (need 180, remaining 53)"
-  - path: "_templates/weekly.md"
-    reason: "token budget exceeded (need 354, remaining 53)"
-  - path: "knowledge/KNW-0002.md"
-    reason: "token budget exceeded (need 550, remaining 53)"
-  - path: "knowledge/KNW-0001.md"
-    reason: "token budget exceeded (need 450, remaining 53)"
-  - path: "_templates/session.md"
-    reason: "token budget exceeded (need 95, remaining 53)"
+  - path: "knowledge/KNW-0004.md"
+    reason: "token budget exceeded (need 500, remaining 85)"
+  - path: "_templates/daily.md"
+    reason: "token budget exceeded (need 222, remaining 85)"
+  - path: "13 keyboard shortcuts.md"
+    reason: "token budget exceeded (need 449, remaining 85)"
+  - path: "Task_Board.md"
+    reason: "token budget exceeded (need 109, remaining 85)"
+  - path: "README.md"
+    reason: "token budget exceeded (need 977, remaining 85)"
 ---
 
 ## Vault State
 
-- **Total notes:** 25
+- **Total notes:** 29
 - **Open tasks:** 2
 - **Recent decisions:** 1
 
 ## Changed Since Last Compile
 
+**(root)/**
+- [[CLAUDE.md]]
+
 **inbox/**
-- [[inbox/2026-04-03.md]]
+- [[inbox/2026-04-04.md]]
+
+**knowledge/**
+- [[knowledge/KNW-0007.md]]
+- [[knowledge/KNW-0006.md]]
 
 
 ## Key Context
 
 ### [[inbox/2026-04-03.md]]
 
-- **Score:** 0.833 (recency=1.00, delta=1.00, links=0.67, importance=0.50)
+- **Score:** 0.801 (recency=0.89, delta=1.00, links=0.67, importance=0.50)
 - **Tokens:** ~44
 
 --- **15:30:49** — Vault opened. Session started.
 
-### [[Dashboard.md]]
+### [[inbox/2026-04-04.md]]
 
-- **Score:** 0.614 (recency=0.28, delta=0.88, links=0.33, importance=1.00)
-- **Tokens:** ~856
+- **Score:** 0.700 (recency=1.00, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~18
 
-> **Quick Actions**  `BUTTON[compile-briefing]`  `BUTTON[drift-scan]`  `BUTTON[new-decision]`  `BUTTON[new-task]`  `BUTTON[quick-capture]`
+--- **01:18:26** — Vault opened. Session started.
+
+### [[CLAUDE.md]]
+
+- **Score:** 0.691 (recency=0.97, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~1057
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+### [[knowledge/KNW-0007.md]]
+
+- **Score:** 0.688 (recency=0.96, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~650
+
+Local-Network-Hub is the user's production AI workflow coordination system at `C:\Users\MarsBase\Documents\Local-Network-Hub`. It's an Obsidian vault designed as a persistent workspace where humans and AI agents collaborate through standardized note structure, task queue, session logging, and handof...
+
+### [[knowledge/KNW-0006.md]]
+
+- **Score:** 0.688 (recency=0.96, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~500
+
+Force Multiplication v1 is the user's main knowledge base — 1,600+ files at `C:\Users\MarsBase\Documents\Force Multiplication v1`. It's a multi-purpose personal knowledge management system undergoing a major reorganization (25% complete).
 
 ### [[knowledge/KNW-0005.md]]
 
-- **Score:** 0.613 (recency=0.18, delta=0.87, links=1.00, importance=0.50)
+- **Score:** 0.606 (recency=0.16, delta=0.86, links=1.00, importance=0.50)
 - **Tokens:** ~650
 
 The drift-detector plugin continuously monitors vault integrity. "Drift" is any state where the vault's contents diverge from its intended structure or internal consistency. The plugin runs four independent scanners, each targeting a different failure mode.
 
 ### [[knowledge/KNW-0003.md]]
 
-- **Score:** 0.613 (recency=0.18, delta=0.87, links=1.00, importance=0.50)
+- **Score:** 0.605 (recency=0.16, delta=0.86, links=1.00, importance=0.50)
 - **Tokens:** ~600
 
 The context-compiler plugin produces a token-budgeted briefing (`_system/_briefing.md`) that gives an AI session the most relevant vault context within a fixed token window. It solves the core problem of cross-session continuity: each new Claude session starts with no memory, so the briefing reconst...
 
+### [[Dashboard.md]]
+
+- **Score:** 0.604 (recency=0.25, delta=0.88, links=0.33, importance=1.00)
+- **Tokens:** ~856
+
+> **Quick Actions**  `BUTTON[compile-briefing]`  `BUTTON[drift-scan]`  `BUTTON[new-decision]`  `BUTTON[new-task]`  `BUTTON[quick-capture]`
+
 ### [[Vault_Health.md]]
 
-- **Score:** 0.596 (recency=0.18, delta=0.87, links=0.67, importance=0.75)
+- **Score:** 0.589 (recency=0.16, delta=0.86, links=0.67, importance=0.75)
 - **Tokens:** ~2368
 
 > Comprehensive operational health metrics for the Claude Vault. > All sections are live — powered by Dataview and DataviewJS.
 
 ### [[_templates/task.md]]
 
-- **Score:** 0.583 (recency=0.47, delta=0.92, links=0.33, importance=0.50)
+- **Score:** 0.566 (recency=0.42, delta=0.91, links=0.33, importance=0.50)
 - **Tokens:** ~76
 
 <% tp.file.cursor(2) %>
 
 ### [[_templates/knowledge.md]]
 
-- **Score:** 0.582 (recency=0.47, delta=0.92, links=0.33, importance=0.50)
+- **Score:** 0.565 (recency=0.42, delta=0.91, links=0.33, importance=0.50)
 - **Tokens:** ~73
 
 <% tp.file.cursor(3) %>
 
 ### [[_templates/decision.md]]
 
-- **Score:** 0.582 (recency=0.47, delta=0.92, links=0.33, importance=0.50)
+- **Score:** 0.565 (recency=0.42, delta=0.91, links=0.33, importance=0.50)
 - **Tokens:** ~95
 
 <% tp.file.cursor(5) %>
 
 ### [[_templates/startup.md]]
 
-- **Score:** 0.581 (recency=0.47, delta=0.91, links=0.33, importance=0.50)
+- **Score:** 0.564 (recency=0.42, delta=0.91, links=0.33, importance=0.50)
 - **Tokens:** ~204
 
 <%* // Startup template — runs on vault open // Appends a session marker to today's inbox file
 
 ### [[sessions/daily/2024-01-26.md]]
 
-- **Score:** 0.557 (recency=0.40, delta=0.90, links=0.33, importance=0.50)
+- **Score:** 0.543 (recency=0.36, delta=0.90, links=0.33, importance=0.50)
 - **Tokens:** ~164
 
 ```dataview TABLE agent, status, summary FROM "sessions" WHERE type = "session" AND date = date("2026-04-03") SORT file.ctime ASC ```
 
 ### [[_templates/Preloaded Classes/202401211512 Notebook CSS Classes.md]]
 
-- **Score:** 0.557 (recency=0.40, delta=0.90, links=0.33, importance=0.50)
+- **Score:** 0.542 (recency=0.36, delta=0.90, links=0.33, importance=0.50)
 - **Tokens:** ~138
 
 <mark style="background:#d3f8b6"><div style="background-color=black;color:white"></mark> <mark style="background:#d3f8b6"><i>This page is only for keeping CSS classes ready for autocomplete.</i></mark> <mark style="background:#d3f8b6"></div></mark>
 
 ### [[_templates/Preloaded Classes/202403091325 General Tweaks CSS Classes.md]]
 
-- **Score:** 0.557 (recency=0.40, delta=0.90, links=0.33, importance=0.50)
+- **Score:** 0.542 (recency=0.35, delta=0.90, links=0.33, importance=0.50)
 - **Tokens:** ~54
 
 <div style="background-color=black;color:white"> <i>This page is only for keeping CSS classes ready for autocomplete.</i> </div>
 
-### [[_templates/daily.md]]
-
-- **Score:** 0.550 (recency=0.38, delta=0.90, links=0.33, importance=0.50)
-- **Tokens:** ~222
-
-```dataview TABLE agent, status, summary FROM "sessions" WHERE type = "session" AND date = date("<% tp.date.now("YYYY-MM-DD") %>") SORT file.ctime ASC ```
-
 ### [[tasks/TSK-0002.md]]
 
-- **Score:** 0.549 (recency=0.19, delta=0.87, links=0.67, importance=0.50)
+- **Score:** 0.541 (recency=0.17, delta=0.86, links=0.67, importance=0.50)
 - **Tokens:** ~187
 
 Configure the obsidian-local-rest-api plugin with proper authentication and test that Claude Code can read/write vault notes over HTTP. This enables any Claude instance (Code, Desktop, API) to interact with the vault without filesystem access.
 
 ### [[tasks/TSK-0001.md]]
 
-- **Score:** 0.549 (recency=0.19, delta=0.87, links=0.67, importance=0.50)
+- **Score:** 0.541 (recency=0.17, delta=0.86, links=0.67, importance=0.50)
 - **Tokens:** ~181
 
 Scan the user's main knowledge base (Force Multiplication v1, 4,351 files) and create knowledge entries documenting its folder structure, key files, organizational schema, and how it connects to the rest of the ecosystem.
 
-### [[knowledge/KNW-0004.md]]
-
-- **Score:** 0.546 (recency=0.18, delta=0.87, links=0.67, importance=0.50)
-- **Tokens:** ~500
-
-Every decision in the vault has a unique ID (`DEC-NNNN`) and a status field that tracks its lifecycle:
-
-### [[13 keyboard shortcuts.md]]
-
-- **Score:** 0.541 (recency=0.35, delta=0.90, links=0.33, importance=0.50)
-- **Tokens:** ~449
-
-<% tp.file.cursor(3) %>
-
-### [[Task_Board.md]]
-
-- **Score:** 0.515 (recency=0.28, delta=0.88, links=0.33, importance=0.50)
-- **Tokens:** ~109
-
-- [ ] [[tasks/TSK-0001|Index Force Multiplication v1 vault architecture]] - [ ] [[tasks/TSK-0002|Configure Local REST API for external agent access]]
-
-### [[README.md]]
-
-- **Score:** 0.484 (recency=0.19, delta=0.87, links=0.33, importance=0.50)
-- **Tokens:** ~977
-
-This is not a human notebook. It is an operational layer for AI systems — Claude Code, Claude Desktop, Claude API, and local models.
-
 ## Open Tasks
 
-- **[[tasks/TSK-0002.md|Configure Local REST API for external agent access]]** — status: open, priority: normal
 - **[[tasks/TSK-0001.md|Index Force Multiplication v1 vault architecture]]** — status: open, priority: normal
+- **[[tasks/TSK-0002.md|Configure Local REST API for external agent access]]** — status: open, priority: normal
 
 ## Recent Decisions
 
