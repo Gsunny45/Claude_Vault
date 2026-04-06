@@ -875,14 +875,7 @@ Add full Obsidian Vault Integration (MIT):
 2. In Android Studio emulator: Add VaultManager, test folder picker → read a sample SKILL.md.
 3. Create a test Obsidian vault on your laptop, copy to emulator `/sdcard/ObsidianTest/`, link it.
 4. Trigger `//buildskill "Obsidian graph skill"` → watch it export a new .md that you can open in real Obsidian.
-
-This turns your keyboard into the missing “Claude control panel” for your entire Obsidian life. No more copy-paste between apps.
-
-Want the full `VaultManager.kt` file contents right now? Or the importer script? Or a ready-to-paste Obsidian plugin manifest if you want keyboard ↔ Obsidian sidebar triggers? Drop the word and we ship it. Your vault is now the keyboard’s brain. What’s the first skill you want living in it?
-
-chat 2.md
-
-Displaying chat 2.md.
+![[mermaid-diagram.svg]]
 
 ## Acceptance Criteria
 

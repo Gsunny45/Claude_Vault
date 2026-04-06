@@ -11,6 +11,8 @@ kanban-plugin: basic
 
 ## In Progress
 
+- [ ] [[tasks/TSK-0003|agentA-Z Keyboard — Android AI keyboard orchestration system]]
+
 ## Blocked
 
 ## Done
