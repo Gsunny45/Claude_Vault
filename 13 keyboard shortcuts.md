@@ -1,22 +1,21 @@
 ---
 type: knowledge
-id: KNW-0006
-subject: ""
-confidence: verified
-last_verified: 2026-04-03
-source: "Claude Code"
+id: KNW-0012
+subject: "Keyboard shortcuts reference"
+confidence: inferred
+last_verified: 2026-04-08
+source: "template artifact — needs content or deletion"
 related: []
-tokens:
+tokens: 50
 ---
 
 ## Summary
 
-<% tp.file.cursor(3) %>
+Placeholder note created from template. Originally had duplicate ID KNW-0006 (conflict with Force Multiplication v1 entry). Reassigned to KNW-0012. Needs content or user decision to delete.
 
 ## Details
 
 ## References
-13 keyboard shortcuts:
 
   ┌────────────────┬───────────────────────┐
   │      Keys      │        Action         │

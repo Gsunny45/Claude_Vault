@@ -1,12 +1,15 @@
 ---
-type: task
-id: TSK-0003
-title: "KeyBoard concipets"
-status: open
+type: inbox
+id: INB-2026-04-05-keyboard-research
+title: "Keyboard concepts — raw research dump (processed)"
+status: processed
 created: 2026-04-05
-assigned_session:
-depends_on: []
-outcome: ""
+processed_into:
+  - "KNW-0008"
+  - "KNW-0009"
+  - "DEC-0002"
+  - "TSK-0003"
+notes: "Original raw AI chat dump. Content extracted into proper vault entries in SES-2026-04-06-001. Retained as source archive."
 ---
 
 ## Objective
