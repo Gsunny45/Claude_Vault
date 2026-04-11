@@ -1,203 +1,269 @@
 ---
 type: briefing
-compiled: "2026-04-09T06:38:43Z"
+compiled: "2026-04-11T22:25:53Z"
 token_budget: 8000
-token_actual: 7978
+token_actual: 7980
 scope: auto-compiled
 notes_included:
+  - "tasks/TSK-0002.md"
+  - "knowledge/KNW-0010.md"
+  - "tasks/TSK-0004.md"
+  - "knowledge/KNW-0011.md"
+  - "inbox/2026-04-11.md"
+  - "tasks/TSK-0010.md"
+  - "tasks/TSK-0009.md"
+  - "tasks/TSK-0008.md"
+  - "tasks/TSK-0007.md"
+  - "tasks/TSK-0006.md"
+  - "tasks/TSK-0005.md"
+  - "sessions/daily/2024-01-26.md"
+  - "Claude_on_Claude/docs/N8N-MIGRATION.md"
+  - "knowledge/KNW-0020.md"
   - "inbox/2026-04-08.md"
   - "_templates/rag-question.md"
-  - "knowledge/KNW-0013.md"
-  - "tasks/TSK-0004.md"
   - "13 keyboard shortcuts.md"
-  - "knowledge/KNW-0011.md"
-  - "knowledge/KNW-0010.md"
-  - "knowledge/KNW-0009.md"
-  - "tasks/TSK-0003.md"
+  - "Claude_on_Claude/openclaw-config/skills/model-router.md"
+  - "Claude_on_Claude/openclaw-config/skills/vault-sync.md"
   - "inbox/2026-04-06.md"
-  - "sessions/SES-2026-04-06-001.md"
-  - "Task_Board.md"
-  - "decisions/DEC-0002.md"
-  - "knowledge/KNW-0008.md"
   - "inbox/2026-04-05.md"
   - "inbox/2026-04-03.md"
-  - "inbox/2026-04-04.md"
-  - "knowledge/KNW-0005.md"
-  - "tasks/TSK-0002.md"
-  - "_templates/task.md"
 notes_excluded_reason:
-  - path: "inbox/Untitled.md"
-    reason: "token budget exceeded (need 12829, remaining 5633)"
-  - path: "tasks/TSK-0001.md"
-    reason: "token budget exceeded (need 181, remaining 98)"
-  - path: "knowledge/KNW-0003.md"
-    reason: "token budget exceeded (need 600, remaining 98)"
-  - path: "Vault_Health.md"
-    reason: "token budget exceeded (need 2368, remaining 98)"
-  - path: "Dashboard.md"
-    reason: "token budget exceeded (need 856, remaining 98)"
+  - path: "Claude_on_Claude/docs/ARCHITECTURE.md"
+    reason: "token budget exceeded (need 1755, remaining 809)"
+  - path: "Claude_on_Claude/docs/HANDOFF-PROTOCOL.md"
+    reason: "token budget exceeded (need 2646, remaining 809)"
+  - path: "knowledge/KNW-0013.md"
+    reason: "token budget exceeded (need 1500, remaining 709)"
+  - path: "knowledge/KNW-0019.md"
+    reason: "token budget exceeded (need 1500, remaining 709)"
+  - path: "Claude_on_Claude/openclaw-config/MEMORY.md"
+    reason: "token budget exceeded (need 314, remaining 126)"
 ---
 
 ## Vault State
 
-- **Total notes:** 43
-- **Open tasks:** 4
+- **Total notes:** 66
+- **Open tasks:** 9
 - **Recent decisions:** 2
 
 ## Changed Since Last Compile
 
+**Claude_on_Claude/**
+- [[Claude_on_Claude/README.md]]
+
+**Claude_on_Claude/docs/**
+- [[Claude_on_Claude/docs/ARCHITECTURE.md]]
+- [[Claude_on_Claude/docs/N8N-MIGRATION.md]]
+- [[Claude_on_Claude/docs/HANDOFF-PROTOCOL.md]]
+
+**Claude_on_Claude/mcp-servers/openrouter-mcp/**
+- [[Claude_on_Claude/mcp-servers/openrouter-mcp/README.md]]
+
+**Claude_on_Claude/openclaw-config/**
+- [[Claude_on_Claude/openclaw-config/MEMORY.md]]
+
+**Claude_on_Claude/openclaw-config/skills/**
+- [[Claude_on_Claude/openclaw-config/skills/vault-sync.md]]
+- [[Claude_on_Claude/openclaw-config/skills/model-router.md]]
+
+**_scripts/openrouter_mcp/**
+- [[_scripts/openrouter_mcp/README.md]]
+
 **inbox/**
-- [[inbox/2026-04-08.md]]
+- [[inbox/2026-04-11.md]]
+
+**knowledge/**
+- [[knowledge/KNW-0016.md]]
+- [[knowledge/KNW-0020.md]]
+- [[knowledge/KNW-0019.md]]
+- [[knowledge/KNW-0018.md]]
+- [[knowledge/KNW-0017.md]]
+- [[knowledge/KNW-0015.md]]
+- [[knowledge/KNW-0014.md]]
+- [[knowledge/KNW-0011.md]]
+- [[knowledge/KNW-0010.md]]
+
+**sessions/daily/**
+- [[sessions/daily/2024-01-26.md]]
+
+**tasks/**
+- [[tasks/TSK-0010.md]]
+- [[tasks/TSK-0009.md]]
+- [[tasks/TSK-0004.md]]
+- [[tasks/TSK-0008.md]]
+- [[tasks/TSK-0006.md]]
+- [[tasks/TSK-0007.md]]
+- [[tasks/TSK-0005.md]]
+- [[tasks/TSK-0002.md]]
 
 
 ## Key Context
 
+### [[tasks/TSK-0002.md]]
+
+- **Score:** 0.820 (recency=0.95, delta=1.00, links=0.67, importance=0.50)
+- **Tokens:** ~307
+
+Configure the obsidian-local-rest-api plugin with proper authentication and test that Claude Code can read/write vault notes over HTTP. This enables any Claude instance (Code, Desktop, API) to interact with the vault without filesystem access.
+
+### [[knowledge/KNW-0010.md]]
+
+- **Score:** 0.753 (recency=0.95, delta=1.00, links=0.33, importance=0.50)
+- **Tokens:** ~1200
+
+Mars is building a **distributed multi-agent orchestration system** across multiple AI providers, local models, and automation layers. This is not a collection of tools — it is a unified stack where each node has a defined role.
+
+### [[tasks/TSK-0004.md]]
+
+- **Score:** 0.753 (recency=0.95, delta=1.00, links=0.33, importance=0.50)
+- **Tokens:** ~935
+
+> **DEADLINE: 2026-04-20** — n8n free trial expires. All workflows must be extracted to offline scripts.
+
+### [[knowledge/KNW-0011.md]]
+
+- **Score:** 0.751 (recency=0.95, delta=1.00, links=0.33, importance=0.50)
+- **Tokens:** ~500
+
+Live status of every connection point in the orchestration stack. Update this entry whenever a connection is confirmed, broken, or changed.
+
+### [[inbox/2026-04-11.md]]
+
+- **Score:** 0.700 (recency=1.00, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~18
+
+--- **15:25:53** — Vault opened. Session started.
+
+### [[tasks/TSK-0010.md]]
+
+- **Score:** 0.686 (recency=0.95, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~400
+
+> The workflow of the day. Every morning, the system wakes up, reads the vault, triages tasks, and prepares a briefing. This is the heartbeat.
+
+### [[tasks/TSK-0009.md]]
+
+- **Score:** 0.686 (recency=0.95, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~350
+
+> 1,600+ files of accumulated human knowledge sit in FM v1. Agents can't use what they can't find. This task makes that knowledge searchable.
+
+### [[tasks/TSK-0008.md]]
+
+- **Score:** 0.686 (recency=0.95, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~350
+
+> A system that can't trust its own memory is broken. This task cleans the vault so every agent reads accurate data.
+
+### [[tasks/TSK-0007.md]]
+
+- **Score:** 0.686 (recency=0.95, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~400
+
+> The VPS is the spine — the central relay that n8n, OpenClaw, and remote agents attach to. Without it, everything stays local-only.
+
+### [[tasks/TSK-0006.md]]
+
+- **Score:** 0.686 (recency=0.95, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~450
+
+> Local models are the bones — the structural foundation that holds everything up when the internet goes dark. This task hardens the local inference layer.
+
+### [[tasks/TSK-0005.md]]
+
+- **Score:** 0.686 (recency=0.95, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~400
+
+> Obsidian is the blood of this system. Every agent reads from it, every result writes back to it. This task makes that flow reliable.
+
+### [[sessions/daily/2024-01-26.md]]
+
+- **Score:** 0.686 (recency=0.95, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~180
+
+```dataview TABLE agent, status, summary FROM "sessions" WHERE type = "session" AND date = date("2026-04-03") SORT file.ctime ASC ```
+
+### [[Claude_on_Claude/docs/N8N-MIGRATION.md]]
+
+- **Score:** 0.684 (recency=0.95, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~1251
+
+- [x] Open n8n cloud instance - [x] Export workflows as JSON (n8n-workflows-backup-[timestamp].json) - [x] Copy backup to `Claude_on_Claude/n8n-workflows/` and commit
+
+### [[knowledge/KNW-0020.md]]
+
+- **Score:** 0.678 (recency=0.93, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~450
+
+Full specification lives in the Claude_on_Claude repo: `Claude_on_Claude/docs/HANDOFF-PROTOCOL.md`
+
 ### [[inbox/2026-04-08.md]]
 
-- **Score:** 0.767 (recency=1.00, delta=1.00, links=0.33, importance=0.50)
+- **Score:** 0.677 (recency=0.70, delta=1.00, links=0.33, importance=0.50)
 - **Tokens:** ~31
 
 --- **22:16:00** — Vault opened. Session started.
 
 ### [[_templates/rag-question.md]]
 
-- **Score:** 0.762 (recency=0.99, delta=1.00, links=0.33, importance=0.50)
+- **Score:** 0.671 (recency=0.69, delta=0.99, links=0.33, importance=0.50)
 - **Tokens:** ~69
 
 <% tp.file.cursor() %>
 
-### [[knowledge/KNW-0013.md]]
-
-- **Score:** 0.762 (recency=0.99, delta=1.00, links=0.33, importance=0.50)
-- **Tokens:** ~1500
-
-Obsidian note → n8n reads it → Gemini answers using vault context → answer written back to vault. This is the first working integration that proves the full stack.
-
-### [[tasks/TSK-0004.md]]
-
-- **Score:** 0.745 (recency=0.96, delta=0.97, links=0.33, importance=0.50)
-- **Tokens:** ~767
-
-> **DEADLINE: 2026-04-20** — n8n free trial expires. All workflows must be extracted to offline scripts.
-
 ### [[13 keyboard shortcuts.md]]
 
-- **Score:** 0.745 (recency=0.96, delta=0.97, links=0.33, importance=0.50)
+- **Score:** 0.657 (recency=0.67, delta=0.96, links=0.33, importance=0.50)
 - **Tokens:** ~50
 
 Placeholder note created from template. Originally had duplicate ID KNW-0006 (conflict with Force Multiplication v1 entry). Reassigned to KNW-0012. Needs content or user decision to delete.
 
-### [[knowledge/KNW-0011.md]]
+### [[Claude_on_Claude/openclaw-config/skills/model-router.md]]
 
-- **Score:** 0.745 (recency=0.96, delta=0.97, links=0.33, importance=0.50)
-- **Tokens:** ~500
+- **Score:** 0.642 (recency=0.81, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~271
 
-Live status of every connection point in the orchestration stack. Update this entry whenever a connection is confirmed, broken, or changed.
+Smart model selection based on task type, urgency, and remaining free quota.
 
-### [[knowledge/KNW-0010.md]]
+### [[Claude_on_Claude/openclaw-config/skills/vault-sync.md]]
 
-- **Score:** 0.745 (recency=0.96, delta=0.97, links=0.33, importance=0.50)
-- **Tokens:** ~1200
+- **Score:** 0.642 (recency=0.81, delta=1.00, links=0.00, importance=0.50)
+- **Tokens:** ~262
 
-Mars is building a **distributed multi-agent orchestration system** across multiple AI providers, local models, and automation layers. This is not a collection of tools — it is a unified stack where each node has a defined role.
-
-### [[knowledge/KNW-0009.md]]
-
-- **Score:** 0.636 (recency=0.65, delta=0.69, links=0.67, importance=0.50)
-- **Tokens:** ~380
-
-- **Distro:** kali-linux (WSL2) - **User:** biocyberswarwAI@DESKTOP-SH8JARJ - **Path:** /mnt/c/Users/MarsBase/my-agent - **WSL shortcut:** `kali` from PowerShell
-
-### [[tasks/TSK-0003.md]]
-
-- **Score:** 0.633 (recency=0.53, delta=0.58, links=1.00, importance=0.50)
-- **Tokens:** ~581
-
-Build an Android AI keyboard (agentA-Z) that fuses Typeless-style voice polish, CleverType-style contextual AI, Obsidian Templater-style trigger/template expansion, and local LLM inference (Qwen2.5-Coder-1.5B-Uncensored-DPO Q6_K) into a single orchestrator-first, JSON-driven IME. Two design paths: c...
+Synchronize state between OpenClaw agent memory and Obsidian vaults via REST API.
 
 ### [[inbox/2026-04-06.md]]
 
-- **Score:** 0.522 (recency=0.57, delta=0.62, links=0.33, importance=0.50)
+- **Score:** 0.469 (recency=0.40, delta=0.61, links=0.33, importance=0.50)
 - **Tokens:** ~18
 
 --- **06:13:45** — Vault opened. Session started.
 
-### [[sessions/SES-2026-04-06-001.md]]
-
-- **Score:** 0.500 (recency=0.53, delta=0.58, links=0.33, importance=0.50)
-- **Tokens:** ~469
-
-First Cowork session. Processed TSK-0003 (agentA-Z Keyboard) from inbox research dump into proper vault entries. Created architecture knowledge (KNW-0008), repo inventory (KNW-0009), and FlorisBoard decision (DEC-0002). Updated Task Board. Next: GitHub repo creation and population.
-
-### [[Task_Board.md]]
-
-- **Score:** 0.500 (recency=0.53, delta=0.58, links=0.33, importance=0.50)
-- **Tokens:** ~131
-
-- [ ] [[tasks/TSK-0001|Index Force Multiplication v1 vault architecture]] - [ ] [[tasks/TSK-0002|Configure Local REST API for external agent access]]
-
-### [[decisions/DEC-0002.md]]
-
-- **Score:** 0.500 (recency=0.53, delta=0.58, links=0.33, importance=0.50)
-- **Tokens:** ~350
-
-Use FlorisBoard as the IME foundation for agentA-Z Keyboard. Fork and extend with: 1. AI orchestration engine (background service reading skills.json) 2. Trigger detection in the NLP/spell-checker layer 3. CoT/ToT reasoning injected into the candidate suggestion bar 4. Voice integration via whisper-...
-
-### [[knowledge/KNW-0008.md]]
-
-- **Score:** 0.500 (recency=0.53, delta=0.58, links=0.33, importance=0.50)
-- **Tokens:** ~900
-
-agentA-Z is an Android AI keyboard system with two design paths. Design 1 is cloud-hybrid (ships first), Design 2 is fully local (open-source future). Both share the same 5-layer architecture flowing top-to-bottom.
-
 ### [[inbox/2026-04-05.md]]
 
-- **Score:** 0.498 (recency=0.52, delta=0.58, links=0.33, importance=0.50)
+- **Score:** 0.449 (recency=0.37, delta=0.57, links=0.33, importance=0.50)
 - **Tokens:** ~44
 
 --- **22:44:36** — Vault opened. Session started.
 
 ### [[inbox/2026-04-03.md]]
 
-- **Score:** 0.376 (recency=0.19, delta=0.28, links=0.67, importance=0.50)
+- **Score:** 0.356 (recency=0.13, delta=0.28, links=0.67, importance=0.50)
 - **Tokens:** ~44
 
 --- **15:30:49** — Vault opened. Session started.
 
-### [[inbox/2026-04-04.md]]
-
-- **Score:** 0.357 (recency=0.28, delta=0.36, links=0.33, importance=0.50)
-- **Tokens:** ~31
-
---- **01:18:26** — Vault opened. Session started.
-
-### [[knowledge/KNW-0005.md]]
-
-- **Score:** 0.353 (recency=0.03, delta=0.14, links=1.00, importance=0.50)
-- **Tokens:** ~650
-
-The drift-detector plugin continuously monitors vault integrity. "Drift" is any state where the vault's contents diverge from its intended structure or internal consistency. The plugin runs four independent scanners, each targeting a different failure mode.
-
-### [[tasks/TSK-0002.md]]
-
-- **Score:** 0.287 (recency=0.04, delta=0.14, links=0.67, importance=0.50)
-- **Tokens:** ~187
-
-Configure the obsidian-local-rest-api plugin with proper authentication and test that Claude Code can read/write vault notes over HTTP. This enables any Claude instance (Code, Desktop, API) to interact with the vault without filesystem access.
-
-### [[_templates/task.md]]
-
-- **Score:** 0.251 (recency=0.09, delta=0.19, links=0.33, importance=0.50)
-- **Tokens:** ~76
-
-<% tp.file.cursor(2) %>
-
 ## Open Tasks
 
+- **[[tasks/TSK-0010.md|Daily Workflow Nerve — Automated Vault Briefing + Task Triage]]** — status: open, priority: normal
+- **[[tasks/TSK-0009.md|Force Multiplication v1 — RAG Index for Agent Context]]** — status: open, priority: normal
 - **[[tasks/TSK-0004.md|T-13 Days n8n Extraction and Hardening Protocol]]** — status: in_progress, priority: critical
 - **[[tasks/TSK-0003.md|agentA-Z Keyboard — Android AI keyboard orchestration system]]** — status: in_progress, priority: normal
-- **[[tasks/TSK-0002.md|Configure Local REST API for external agent access]]** — status: open, priority: normal
+- **[[tasks/TSK-0008.md|Vault Health Sweep — Fix Drift, Schema, Stale Refs]]** — status: open, priority: normal
+- **[[tasks/TSK-0006.md|Local LLM Bones — Ollama Service + Model Selection + Always-On Fallback]]** — status: open, priority: high
+- **[[tasks/TSK-0005.md|Obsidian Blood Flow — Vault REST API Pipeline for All Agents]]** — status: open, priority: high
 - **[[tasks/TSK-0001.md|Index Force Multiplication v1 vault architecture]]** — status: open, priority: normal
+- **[[tasks/TSK-0002.md|Configure Local REST API for external agent access]]** — status: open, priority: normal
 
 ## Recent Decisions
 
