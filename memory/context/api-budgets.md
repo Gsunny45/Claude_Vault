@@ -1,0 +1,56 @@
+# API Budgets & Credits
+
+Last updated: 2026-04-13 15:43
+
+## Active Balances
+
+| Provider | Balance | Status | Notes |
+|----------|---------|--------|-------|
+| **Gemini** | Free tier | LIVE in .env | Confirmed PASS, gemini-3-flash-preview |
+| **Pinecone** | $300.00 credit | LIVE in .env | Index created, 21 days from 4/13 (~expires 5/4) |
+| **Claude API** | $4.90 remaining | Available | Anthropic API credits |
+| **OpenRouter** | $10.00 remaining | Key exposed, ROTATE | Primary aggregator |
+| **Groq** | Free tier | Key exposed, ROTATE | Fast inference |
+| **DeepSeek** | $4.99 remaining | Key exposed, ROTATE | Cheap reasoning |
+| **Perplexity** | $6.90 remaining | Key exposed, ROTATE | Search-grounded |
+| **Grok (xAI)** | Active credits | Key exposed, ROTATE | Monthly free credits |
+| **Mistral** | Dead key | Needs $10 | Not operational |
+| **LlamaIndex Cloud** | 10,000 credits | Have account | cloud.llamaindex.ai |
+| **LangChain** | Have API key | Available | Unknown balance |
+| **n8n** | Trial | Expires 4/20 (7 days!) | CRITICAL: extract workflows |
+| **OpenAI** | No key | — | Not configured |
+
+## Claude Usage Context (as of 4/13 15:43)
+- Pro plan: 72% session used, resets in ~4.5 hrs
+- Weekly: 93% used, resets Tue 10:00 PM
+- Claude API balance: $4.90
+- Strategy: conserve Claude for high-value tasks, route everything else through free tiers
+
+## Keys Currently Live in .env
+- GEMINI_API_KEY ✓ (rotated/fresh)
+- PINECONE_API_KEY ✓ (fresh)
+- PINECONE_HOST ✓ (fresh)
+- All others: NEED ROTATION after 4/13 exposure
+
+## Priority Order (cost efficiency)
+1. Free forever: Groq, Gemini, OpenRouter free pool, Ollama local
+2. Cheap: DeepSeek ($4.99), Claude API ($4.90)
+3. Moderate: Perplexity ($6.90), OpenRouter paid ($10)
+4. Time-limited: Pinecone ($300/21 days), n8n (7 days), LlamaIndex (10K credits)
+5. Dormant: Mistral (dead), OpenAI (no key)
+
+## Frontend Token Opportunities (Mars' vision)
+The user has historically maintained ~29 API accounts. The goal is to catalog ALL
+free-tier frontends and APIs — not just backend keys — to build a "nerve system"
+of free tokens across online platforms. This includes:
+- AI chat frontends with free tiers (Claude.ai, Gemini, ChatGPT, Poe, etc.)
+- Coding assistants (Cursor, Windsurf, GitHub Copilot, etc.)
+- Platform-specific free allocations (HuggingFace, Replicate, etc.)
+- Online project spaces that grant free compute/tokens
+
+## Hardware Context
+- Device: DESKTOP-SH8JARJ
+- CPU: 13th Gen i5-1335U (1.30 GHz)
+- RAM: 16 GB
+- GPU: Intel Iris Xe (128 MB) — no local inference beyond tiny models
+- Storage: 453/477 GB used (~24 GB free)
