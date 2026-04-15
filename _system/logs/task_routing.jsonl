@@ -1,0 +1,7 @@
+{"task_id": "TSK-0005", "agent": "llm_router", "agent_type": "script", "timestamp": "2026-04-15T22:26:10.260963+00:00", "dry_run": true, "status": "dry_run", "message": "Would route TSK-0005 to llm_router"}
+{"task_id": "TSK-0006", "agent": "llm_router", "agent_type": "script", "timestamp": "2026-04-15T22:26:10.264854+00:00", "dry_run": true, "status": "dry_run", "message": "Would route TSK-0006 to llm_router"}
+{"task_id": "TSK-0001", "agent": "vault_monitor", "agent_type": "script", "timestamp": "2026-04-15T22:26:10.271873+00:00", "dry_run": true, "status": "dry_run", "message": "Would route TSK-0001 to vault_monitor"}
+{"task_id": "TSK-0002", "agent": "llm_router", "agent_type": "script", "timestamp": "2026-04-15T22:26:10.279776+00:00", "dry_run": true, "status": "dry_run", "message": "Would route TSK-0002 to llm_router"}
+{"task_id": "TSK-0008", "agent": "vault_monitor", "agent_type": "script", "timestamp": "2026-04-15T22:26:10.287145+00:00", "dry_run": true, "status": "dry_run", "message": "Would route TSK-0008 to vault_monitor"}
+{"task_id": "TSK-0009", "agent": "llm_router", "agent_type": "script", "timestamp": "2026-04-15T22:26:10.297403+00:00", "dry_run": true, "status": "dry_run", "message": "Would route TSK-0009 to llm_router"}
+{"task_id": "TSK-0010", "agent": "llm_router", "agent_type": "script", "timestamp": "2026-04-15T22:26:10.304881+00:00", "dry_run": true, "status": "dry_run", "message": "Would route TSK-0010 to llm_router"}
