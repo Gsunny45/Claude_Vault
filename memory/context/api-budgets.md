@@ -1,6 +1,6 @@
 # API Budgets & Credits
 
-Last updated: 2026-04-13 15:43
+Last updated: 2026-04-15
 
 ## Active Balances
 
@@ -48,9 +48,19 @@ of free tokens across online platforms. This includes:
 - Platform-specific free allocations (HuggingFace, Replicate, etc.)
 - Online project spaces that grant free compute/tokens
 
-## Hardware Context
-- Device: DESKTOP-SH8JARJ
+## Infrastructure
+
+### Local — DESKTOP-SH8JARJ
 - CPU: 13th Gen i5-1335U (1.30 GHz)
 - RAM: 16 GB
 - GPU: Intel Iris Xe (128 MB) — no local inference beyond tiny models
 - Storage: 453/477 GB used (~24 GB free)
+- Runs: Obsidian vaults, Ollama, local dev
+
+### VPS — Hostinger (live as of 2026-04-14)
+- URL: https://peachpuff-newt-682861.hostingorsite.com
+- IP: 89.117.139.137
+- Storage: 50 GB
+- Access: hPanel (SSH not yet configured)
+- Planned: Full stack deploy (orchestrator + React UI + n8n self-hosted)
+- Deploy config: `llm-orchestrator/deploy/` (Docker Compose + Caddy + Dockerfiles)

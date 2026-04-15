@@ -1,0 +1,92 @@
+version: "3.8"
+
+# === LLM Orchestrator — Full Stack Deployment ===
+# Runs: FastAPI backend + React frontend + n8n + Caddy reverse proxy
+#
+# Usage:
+#   cp .env.example .env    (fill in your keys)
+#   docker compose up -d
+#
+# Ports exposed via Caddy:
+#   :80/:443  → React frontend (default) + API at /api/*
+#   :5678     → n8n workflow editor (internal, tunneled)
+
+services:
+  # --- FastAPI Backend ---
+  backend:
+    build:
+      context: ../backend
+      dockerfile: ../deploy/Dockerfile.backend
+    container_name: orchestrator-backend
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - CORS_ORIGINS=*
+    volumes:
+      - backend-data:/app/data  # keystore, registry.json
+    expose:
+      - "8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8000/api/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # --- React Frontend (built static, served by Caddy) ---
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: ../deploy/Dockerfile.frontend
+    container_name: orchestrator-frontend
+    restart: unless-stopped
+    expose:
+      - "80"
+
+  # --- n8n Workflow Automation (self-hosted, replaces trial) ---
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: orchestrator-n8n
+    restart: unless-stopped
+    environment:
+      - N8N_HOST=0.0.0.0
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=${N8N_WEBHOOK_URL:-http://localhost:5678}
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_USER:-admin}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASSWORD:-changeme}
+      - GENERIC_TIMEZONE=America/Los_Angeles
+    volumes:
+      - n8n-data:/home/node/.n8n
+    expose:
+      - "5678"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:5678/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # --- Caddy Reverse Proxy (auto HTTPS) ---
+  caddy:
+    image: caddy:2-alpine
+    container_name: orchestrator-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      - backend
+      - frontend
+      - n8n
+
+volumes:
+  backend-data:
+  n8n-data:
+  caddy-data:
+  caddy-config:

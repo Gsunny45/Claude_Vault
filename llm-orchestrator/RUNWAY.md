@@ -92,8 +92,46 @@ llm-orchestrator/
 │   │   │   └── Settings.jsx     ← BYO keys + routing mode
 │   │   └── styles.css     ← Dark theme
 │   └── vite.config.js     ← Dev proxy → :8000
-└── start.bat / start.sh   ← Launch both services
+├── start.bat / start.sh   ← Launch both services (local dev)
+└── deploy/
+    ├── docker-compose.yml ← Full stack: backend + frontend + n8n + Caddy
+    ├── Dockerfile.backend ← Python 3.11 slim
+    ├── Dockerfile.frontend← Node build → Caddy static serve
+    ├── Caddyfile          ← Reverse proxy with auto-HTTPS
+    ├── .env.example       ← VPS env template
+    └── bootstrap-vps.sh   ← One-shot VPS setup (Docker, firewall, dirs)
 ```
+
+## VPS Deployment (Hostinger)
+
+**Server:** `89.117.139.137` / `peachpuff-newt-682861.hostingorsite.com` (50GB)
+
+```bash
+# 1. SSH into VPS
+ssh root@89.117.139.137
+
+# 2. Run bootstrap (installs Docker, opens ports)
+bash bootstrap-vps.sh
+
+# 3. Copy project to VPS (from your local machine)
+scp -r llm-orchestrator/ root@89.117.139.137:/opt/llm-orchestrator/
+
+# 4. Configure
+cd /opt/llm-orchestrator/deploy
+cp .env.example .env
+nano .env  # paste rotated API keys, set N8N_PASSWORD
+
+# 5. Launch
+docker compose up -d --build
+
+# 6. Verify
+curl http://localhost/api/health
+# Frontend: https://peachpuff-newt-682861.hostingorsite.com
+# n8n:      https://peachpuff-newt-682861.hostingorsite.com/n8n/
+# API:      https://peachpuff-newt-682861.hostingorsite.com/api/health
+```
+
+Caddy auto-provisions HTTPS via Let's Encrypt. n8n self-hosted replaces the dying cloud trial (TSK-0004).
 
 ## Adding a New Provider
 
@@ -196,18 +234,19 @@ See `knowledge/KNW-0021.md` for full details.
 
 | Deadline | What | Task |
 |----------|------|------|
-| **2026-04-20** | n8n trial expires (6 DAYS) | TSK-0004 — extract 3 workflows to offline scripts |
+| **2026-04-20** | n8n trial expires (5 DAYS) | TSK-0004 — extract workflows OR deploy self-hosted n8n on VPS |
 | **~2026-05-04** | Pinecone $300 credit expires | Migrate to LlamaIndex Cloud or ChromaDB |
 
 ## Next Steps (Priority Order)
 
 1. **ROTATE ALL API KEYS** — they were exposed in a Cowork session on 4/13
-2. **Ingest the vault into Pinecone** — run `python ingest_vault.py` (20 KNW + 10 TSK + 3 docs)
-3. **Extract n8n workflows** before trial expires Apr 20 (TSK-0004, CRITICAL)
-4. **Install Claudian** in Obsidian — bridges vault ↔ orchestrator
+2. **Get SSH access** to VPS (89.117.139.137) via Hostinger hPanel
+3. **Deploy to VPS** — run `bootstrap-vps.sh`, then `docker compose up -d` (kills n8n deadline)
+4. **Ingest the vault into Pinecone** — run `python ingest_vault.py` locally
 5. **Test RAG chat** — toggle RAG on in UI, ask about your vault content
-6. **Rotate keys into .env** — re-add OpenRouter, Groq, DeepSeek, Perplexity, Grok
-7. Evaluate LiteLLM as adapter replacement (simpler code, built-in cost tracking)
-8. Wire Obsidian REST API (:27124) to orchestrator for vault-aware chat
-9. Plan Pinecone → ChromaDB/LlamaIndex migration before credit expiry
-10. Catalog remaining ~15 API accounts from your historical 29
+6. **Install Claudian** in Obsidian — bridges vault ↔ orchestrator
+7. **Rotate keys into deploy/.env** for VPS, re-add all provider keys
+8. Evaluate LiteLLM as adapter replacement (simpler code, built-in cost tracking)
+9. Wire Obsidian REST API (:27124) to orchestrator for vault-aware chat
+10. Plan Pinecone → ChromaDB/LlamaIndex migration before credit expiry
+11. Catalog remaining ~15 API accounts from your historical 29

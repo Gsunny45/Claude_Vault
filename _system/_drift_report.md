@@ -1,7 +1,7 @@
 ---
 type: drift_report
-scanned: 2026-04-11T23:47:17.044Z
-total_notes: 69
+scanned: 2026-04-14T08:29:31.297Z
+total_notes: 158
 issues_found: 14
 critical: 0
 high: 5
@@ -9,10 +9,10 @@ medium: 9
 low: 0
 ---
 
-# Drift Report — 2026-04-11 23:47
+# Drift Report — 2026-04-14 08:29
 
 ## Summary
-Scanned 69 notes. Found 14 issues.
+Scanned 158 notes. Found 14 issues.
 
 | Severity | Count |
 |----------|-------|
@@ -39,8 +39,6 @@ Scanned 69 notes. Found 14 issues.
   - Source verified: 2026-04-06, Target modified: 2026-04-07
 - `knowledge/KNW-0005.md` → `knowledge/KNW-0003.md`: target modified 1 days after source was last verified
   - Source verified: 2026-04-02, Target modified: 2026-04-03
-- `knowledge/KNW-0004.md` → `knowledge/KNW-0005.md`: target modified 1 days after source was last verified
-  - Source verified: 2026-04-02, Target modified: 2026-04-03
 - `knowledge/KNW-0002.md` → `knowledge/KNW-0005.md`: target modified 1 days after source was last verified
   - Source verified: 2026-04-02, Target modified: 2026-04-03
 - `knowledge/KNW-0002.md` → `knowledge/KNW-0003.md`: target modified 1 days after source was last verified
@@ -48,6 +46,8 @@ Scanned 69 notes. Found 14 issues.
 - `knowledge/KNW-0002.md` → `knowledge/KNW-0004.md`: target modified 1 days after source was last verified
   - Source verified: 2026-04-02, Target modified: 2026-04-03
 - `knowledge/KNW-0002.md` → `knowledge/KNW-0005.md`: target modified 1 days after source was last verified
+  - Source verified: 2026-04-02, Target modified: 2026-04-03
+- `knowledge/KNW-0004.md` → `knowledge/KNW-0005.md`: target modified 1 days after source was last verified
   - Source verified: 2026-04-02, Target modified: 2026-04-03
 
 ### Schema Violations (Wrong Types)
