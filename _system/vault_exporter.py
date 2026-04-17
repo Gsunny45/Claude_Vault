@@ -34,7 +34,7 @@ VAULTS = {
 
 SCRAPE_INTERVAL = int(os.environ.get("SCRAPE_INTERVAL", "60"))
 STALE_THRESHOLD_DAYS = int(os.environ.get("STALE_THRESHOLD_DAYS", "14"))
-EXPORTER_PORT = int(os.environ.get("EXPORTER_PORT", "9090"))
+EXPORTER_PORT = int(os.environ.get("EXPORTER_PORT", "9100"))
 
 # ---------------------------------------------------------------------------
 # Logging

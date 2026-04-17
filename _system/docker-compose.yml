@@ -3,12 +3,12 @@
 # Or on WSL/Kali: docker compose up -d
 #
 # Vault exporter runs on host: python vault_exporter.py
-# Prometheus scrapes localhost:9090/metrics
-# Grafana dashboard at http://localhost:3000 (admin/vaultops)
+# Prometheus scrapes localhost:9100/metrics
+# Grafana dashboard at http://localhost:3000 (set GRAFANA_PASSWORD in .env)
 
 services:
   prometheus:
-    image: prom/prometheus:latest
+    image: prom/prometheus:v2.53.0
     container_name: vault-prometheus
     restart: unless-stopped
     ports:
@@ -24,13 +24,13 @@ services:
       - "--web.enable-lifecycle"
 
   grafana:
-    image: grafana/grafana:latest
+    image: grafana/grafana:11.1.0
     container_name: vault-grafana
     restart: unless-stopped
     ports:
       - "3000:3000"
     environment:
-      - GF_SECURITY_ADMIN_PASSWORD=vaultops
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-changeme}
       - GF_USERS_ALLOW_SIGN_UP=false
       - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/var/lib/grafana/dashboards/vault-ops.json
     volumes:

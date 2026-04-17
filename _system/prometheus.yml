@@ -7,6 +7,6 @@ scrape_configs:
     static_configs:
       # Use host.docker.internal when running Prometheus in Docker
       # Use localhost when running Prometheus directly on host/WSL
-      - targets: ["host.docker.internal:9090"]
+      - targets: ["host.docker.internal:9100"]
         labels:
           instance: "vault-exporter"

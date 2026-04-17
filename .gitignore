@@ -1,17 +1,42 @@
+# Secrets — never track
+**/.env
+!**/.env.example
+
+# Node dependencies
+**/node_modules/
+
+# Plugin data with secrets (REST API key + private key)
+.obsidian/plugins/obsidian-local-rest-api/data.json
+
+# Obsidian cache/temp
+.obsidian/cache/
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
 # Large plugin binaries (reinstall from community browser)
 .obsidian/plugins/*/main.js
 .obsidian/plugins/*/styles.css
 
-# Workspace state (changes every session)
-.obsidian/workspace.json
+# Smart Environment
+.smart-env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# PID files
+*.pid
+
+# Monitoring state (regenerated at runtime)
+_system/logs/
+_system/_monitor_state.json
+_system/_token_state.json
+
+# Path artifact
+C:UsersMarsBaseDocumentsClaude_Vault/
 
 # OS files
 desktop.ini
 Thumbs.db
 .DS_Store
-
-
-
-
-# Ignore Smart Environment folder
-.smart-env

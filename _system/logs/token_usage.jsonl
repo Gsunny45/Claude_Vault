@@ -1,1 +1,0 @@
-{"timestamp": "2026-04-15T22:26:05.031249+00:00", "provider": "openrouter", "model": "llama-4-maverick", "input_tokens": 1500, "output_tokens": 800, "total_tokens": 2300, "cost_usd": 0.0, "agent": "task_router_test", "task_id": ""}
