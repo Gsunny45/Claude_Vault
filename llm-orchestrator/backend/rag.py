@@ -35,7 +35,7 @@ PINECONE_HOST = os.getenv("PINECONE_HOST", "")  # e.g. "https://orchestrator-rag
 
 # Embedding config
 EMBED_MODEL = "gemini-embedding-001"  # Confirmed available on your key
-EMBED_DIM = 768
+EMBED_DIM = 1024  # Matches Pinecone index dimension
 CHUNK_SIZE = 512       # tokens per chunk
 CHUNK_OVERLAP = 64     # token overlap between chunks
 TOP_K = 5              # chunks to retrieve
@@ -76,7 +76,7 @@ class PineconeRAG:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{EMBED_MODEL}:batchEmbedContents?key={gemini_key}"
 
         requests_body = [
-            {"model": f"models/{EMBED_MODEL}", "content": {"parts": [{"text": t}]}}
+            {"model": f"models/{EMBED_MODEL}", "content": {"parts": [{"text": t}]}, "outputDimensionality": EMBED_DIM}
             for t in texts
         ]
 

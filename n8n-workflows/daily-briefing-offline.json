@@ -1,0 +1,197 @@
+{
+  "name": "Daily Briefing (Offline)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "669d83db-3e0c-4f84-98c0-635bccf462e3",
+      "name": "Daily 7am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "briefing",
+        "options": {}
+      },
+      "id": "464776aa-ab25-423c-9eed-11c4f2106990",
+      "name": "On-Demand",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        240,
+        400
+      ],
+      "webhookId": "94cf930d-0ba8-4196-b704-aa267b0611ed"
+    },
+    {
+      "parameters": {
+        "mode": "passThrough",
+        "output": "first"
+      },
+      "id": "35c43556-7e70-448b-91cb-a9e08ddd42f2",
+      "name": "Merge Triggers",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst { execSync } = require('child_process');\nconst fs = require('fs');\n\n// Recent vault changes (last 48h)\nlet recentFiles = '';\ntry {\n    recentFiles = execSync(\n        `find /mnt/docs/Local-Network-Hub -name \"*.md\" -mmin -2880 -type f 2>/dev/null | head -20`,\n        { encoding: 'utf8' }\n    ).trim();\n} catch(e) {}\n\n// Open tasks from Claude_Vault\nlet tasks = '';\ntry {\n    const taskFiles = execSync(\n        `find /mnt/docs/Claude_Vault/tasks -name \"*.md\" -type f 2>/dev/null`,\n        { encoding: 'utf8' }\n    ).trim().split('\\n').filter(Boolean);\n    \n    const snippets = taskFiles.slice(0, 15).map(f => {\n        try {\n            const c = fs.readFileSync(f, 'utf8');\n            const title  = (c.match(/^title:\\s*(.+)/m) || c.match(/^# (.+)/m) || ['','?'])[1];\n            const status = (c.match(/^status:\\s*(.+)/m) || ['','?'])[1];\n            const prio   = (c.match(/^priority:\\s*(.+)/m) || ['',''])[1];\n            return `- [${status}${prio ? '/'+prio : ''}] ${title}`.trim();\n        } catch { return ''; }\n    }).filter(Boolean);\n    tasks = snippets.join('\\n');\n} catch(e) { tasks = 'Could not read tasks.'; }\n\n// Read snippets of recent files\nlet context = 'No recent changes.';\nif (recentFiles) {\n    const files = recentFiles.split('\\n').filter(Boolean);\n    context = files.map(f => {\n        try {\n            const c = fs.readFileSync(f, 'utf8').substring(0, 400);\n            return `### ${f.split('/').pop()}\\n${c}`;\n        } catch { return ''; }\n    }).filter(Boolean).join('\\n\\n');\n}\n\nreturn [{ json: {\n    tasks,\n    context,\n    date: new Date().toISOString().substring(0, 10)\n} }];\n"
+      },
+      "id": "8434bc05-6801-4e82-b87f-639df834378c",
+      "name": "Scan Vault",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst d = $input.first().json;\n\nconst prompt = `Today is ${d.date}. You are a concise executive assistant running fully offline.\n\nOPEN TASKS:\n${d.tasks || 'None found.'}\n\nRECENT VAULT ACTIVITY:\n${d.context}\n\nWrite a tight daily briefing (under 200 words):\n1. Top 3 priority tasks for today with a one-line reason each\n2. Any urgent items or deadlines visible in the notes\n3. One suggested focus area\n\nBe direct. No filler. Use markdown.`;\n\n// Model selection: swap to deepseek-r1-7b once registered for better reasoning\nconst model = 'qwen3:8b';\n\nreturn [{ json: {\n    prompt,\n    model,\n    payload: JSON.stringify({\n        model,\n        messages: [{ role: 'user', content: prompt }],\n        stream: false,\n        options: { temperature: 0.3, num_ctx: 4096 }\n    })\n} }];\n"
+      },
+      "id": "b79acc40-ca01-4877-af31-a01153ce45a7",
+      "name": "Build Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        900,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:11434/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ $json.payload }}"
+      },
+      "id": "5b0fc897-f47b-4677-a5a4-ee63ab713c62",
+      "name": "Ollama",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1120,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst resp = $input.first().json;\nconst briefing = resp.choices[0].message.content;\n\nconst now = new Date();\nconst pad = n => String(n).padStart(2,'0');\nconst ts  = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}`;\n\nconst content = `---\ntype: briefing\ndate: \"${ts}\"\ngenerated: \"${now.toISOString()}\"\nsource: ollama-local\n---\n\n${briefing}\n`;\n\nconst fs = require('fs');\nconst outPath = `/mnt/docs/Local-Network-Hub/00-System/daily-briefing-${ts}.md`;\nfs.writeFileSync(outPath, content, 'utf8');\nfs.writeFileSync('/mnt/docs/Local-Network-Hub/00-System/today.md', content, 'utf8');\n\nreturn [{ json: { ok: true, file: outPath, preview: briefing.substring(0, 200) } }];\n"
+      },
+      "id": "3d793cd3-5f73-4511-8c7c-e27c69e13517",
+      "name": "Write Briefing",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1340,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Daily 7am": {
+      "main": [
+        [
+          {
+            "node": "Merge Triggers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On-Demand": {
+      "main": [
+        [
+          {
+            "node": "Merge Triggers",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge Triggers": {
+      "main": [
+        [
+          {
+            "node": "Scan Vault",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scan Vault": {
+      "main": [
+        [
+          {
+            "node": "Build Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Prompt": {
+      "main": [
+        [
+          {
+            "node": "Ollama",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama": {
+      "main": [
+        [
+          {
+            "node": "Write Briefing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": [
+    "offline",
+    "mad-max"
+  ]
+}

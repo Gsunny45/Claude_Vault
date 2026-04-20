@@ -32,10 +32,12 @@ from typing import Optional
 
 # ─── Configuration ──────────────────────────────────────────────
 
-CLAUDE_VAULT = Path(os.environ.get(
-    "CLAUDE_VAULT",
-    r"C:\Users\MarsBase\Documents\Claude_Vault"
-))
+# Resolve vault root from the script location (works on Windows, WSL, Linux).
+# Override with CLAUDE_VAULT env var if the script is moved elsewhere.
+# BUG FIX 2026-04-19: previous hardcoded r"C:\Users\..." default created a
+# literal-path ghost directory when this script ran under WSL — see KNW-0022.
+_DEFAULT_VAULT = Path(__file__).resolve().parent.parent
+CLAUDE_VAULT = Path(os.environ.get("CLAUDE_VAULT", str(_DEFAULT_VAULT)))
 
 WATCHED_FOLDERS = ["tasks", "decisions", "knowledge", "inbox", "sessions"]
 IGNORED_PATTERNS = [".obsidian", "_templates", ".git", "__pycache__", "node_modules"]

@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git mv:*)",
+      "Bash(ls -la \"13 keyboard shortcuts.md\" mermaid-diagram.*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(grep -E \"\\\\.\\(py|md|json|yaml|yml\\)$\")",
+      "Bash(grep -E \"\\\\.\\(md|txt\\)$\")",
+      "Bash(wsl -d Ubuntu -- docker start n8n_local)",
+      "Bash(wsl -d Ubuntu -- docker ps --filter name=n8n_local --format \"{{.Names}}\\\\t{{.Status}}\")",
+      "Bash(python -c ':*)",
+      "Bash(wsl -d Ubuntu -- docker port n8n_local)",
+      "Bash(wsl -d Ubuntu -- docker inspect n8n_local --format \"{{.HostConfig.PortBindings}}\")",
+      "Bash(wsl -d Ubuntu -- hostname -I)",
+      "Bash(awk '{print $1}')",
+      "Bash(wsl -d Ubuntu -- docker inspect n8n_local --format \"{{.Config.Image}} {{json .Config.Env}}\")",
+      "Bash(python test_rag.py)",
+      "Bash(wsl -d Ubuntu -- bash -c \"docker stop n8n_local && docker rm n8n_local\")",
+      "Bash(wsl -d Ubuntu -- docker run -d --name n8n_local --restart unless-stopped -p 0.0.0.0:5678:5678 -v n8n_data:/home/node/.n8n -e N8N_HOST=0.0.0.0 -e N8N_PORT=5678 -e N8N_PROTOCOL=http -e WEBHOOK_URL=http://localhost:5678/ -e GENERIC_TIMEZONE=America/Chicago -e OLLAMA_HOST=http://host.docker.internal:11434 docker.n8n.io/n8nio/n8n:latest)",
+      "Bash(wsl -d Ubuntu -- docker ps --filter name=n8n_local --format \"{{.Names}}\\\\t{{.Status}}\\\\t{{.Ports}}\")",
+      "Bash(python ingest_vault.py)",
+      "Bash(wsl -d Ubuntu -- curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:5678/healthz)",
+      "Bash(wsl -d Ubuntu -- docker logs n8n_local --tail 30)",
+      "Bash(wsl -d Ubuntu -- ss -tlnp)",
+      "Bash(netsh advfirewall:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" --max-time 5 http://172.28.141.110:5678/)",
+      "Bash(wsl -d Ubuntu -- docker exec n8n_local ls /home/node/.n8n/)",
+      "Bash(wsl -d Ubuntu -e docker exec n8n_local ls /home/node/.n8n/)",
+      "Bash(wsl -d Ubuntu -- bash -c \"docker exec n8n_local ls /home/node/.n8n/\")",
+      "Bash(wsl -d Ubuntu -- bash -c \"docker cp '/mnt/c/Users/MarsBase/Documents/Claude_Vault/n8n-workflows/daily-briefing-offline.json' n8n_local:/tmp/daily-briefing.json && docker cp '/mnt/c/Users/MarsBase/Documents/Claude_Vault/n8n-workflows/quick-capture.json' n8n_local:/tmp/quick-capture.json && echo COPIED\")",
+      "Bash(wsl -d Ubuntu -- bash -c \"docker exec n8n_local n8n import:workflow --input=/tmp/daily-briefing.json\")",
+      "Bash(wsl -d Ubuntu -- bash -c ':*)",
+      "Bash(python build_nexus_vault.py --ingest)",
+      "Bash(python capture_training_data.py)"
+    ]
+  }
+}

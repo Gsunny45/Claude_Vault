@@ -1,6 +1,6 @@
 # API Budgets & Credits
 
-Last updated: 2026-04-15
+Last updated: 2026-04-19 (keys deactivated by Mars)
 
 ## Active Balances
 
@@ -9,11 +9,11 @@ Last updated: 2026-04-15
 | **Gemini** | Free tier | LIVE in .env | Confirmed PASS, gemini-3-flash-preview |
 | **Pinecone** | $300.00 credit | LIVE in .env | Index created, 21 days from 4/13 (~expires 5/4) |
 | **Claude API** | $4.90 remaining | Available | Anthropic API credits |
-| **OpenRouter** | $10.00 remaining | Key exposed, ROTATE | Primary aggregator |
-| **Groq** | Free tier | Key exposed, ROTATE | Fast inference |
-| **DeepSeek** | $4.99 remaining | Key exposed, ROTATE | Cheap reasoning |
-| **Perplexity** | $6.90 remaining | Key exposed, ROTATE | Search-grounded |
-| **Grok (xAI)** | Active credits | Key exposed, ROTATE | Monthly free credits |
+| **OpenRouter** | $10.00 remaining | DEACTIVATED 2026-04-19 | Needs fresh key when re-enabled |
+| **Groq** | Free tier | DEACTIVATED 2026-04-19 | Needs fresh key when re-enabled |
+| **DeepSeek** | $4.99 remaining | DEACTIVATED 2026-04-19 | Needs fresh key when re-enabled |
+| **Perplexity** | $6.90 remaining | DEACTIVATED 2026-04-19 | Needs fresh key when re-enabled |
+| **Grok (xAI)** | Active credits | DEACTIVATED 2026-04-19 | Needs fresh key when re-enabled |
 | **Mistral** | Dead key | Needs $10 | Not operational |
 | **LlamaIndex Cloud** | 10,000 credits | Have account | cloud.llamaindex.ai |
 | **LangChain** | Have API key | Available | Unknown balance |
@@ -30,7 +30,7 @@ Last updated: 2026-04-15
 - GEMINI_API_KEY ✓ (rotated/fresh)
 - PINECONE_API_KEY ✓ (fresh)
 - PINECONE_HOST ✓ (fresh)
-- All others: NEED ROTATION after 4/13 exposure
+- All others: DEACTIVATED by Mars 2026-04-19 — generate fresh keys when ready to re-enable
 
 ## Priority Order (cost efficiency)
 1. Free forever: Groq, Gemini, OpenRouter free pool, Ollama local

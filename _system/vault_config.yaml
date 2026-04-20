@@ -1,11 +1,54 @@
-# Claude Vault — Operational Configuration
+# Claude_Vault — Operational Configuration
 # This file is read by custom plugins and by AI agents at session start.
+# Last architecture correction: 2026-04-19 — see decisions/DEC-0003.md
 
 vault:
-  name: "Claude Vault"
-  version: "0.1.0"
+  name: "Claude_Vault"
+  version: "0.2.0"
   owner: "ai"  # not a human vault
   path: "C:\\Users\\MarsBase\\Documents\\Claude_Vault"
+  role: "ai_operational_layer"   # decisions, knowledge, sessions, tasks for AI agents
+
+# 4-vault ecosystem — each has its own path, own repo, own role
+ecosystem:
+  claude_vault:
+    path: "C:\\Users\\MarsBase\\Documents\\Claude_Vault"
+    role: "AI operational layer (this vault)"
+    repo: "github.com/Gsunny45/Claude_Vault"
+  command_vault:
+    path: "C:\\Users\\MarsBase\\Documents\\Command_Vault"
+    role: "monitoring / observability — reads all vaults, emits health + alerts"
+    repo: "TBD — own repo required"
+  local_network_hub:
+    path: "C:\\Users\\MarsBase\\Documents\\Local-Network-Hub"
+    role: "orchestration — REST API, webhooks, routes work between vaults and agents"
+    repo: "TBD — own repo required"
+  rag_vault:
+    path: "C:\\Users\\MarsBase\\Documents\\RAG_Vault"
+    role: "knowledge retrieval — corpus for agent RAG (replaces FM v1's intended role)"
+    repo: "TBD — own repo required"
+
+# Explicitly NOT part of the active system
+not_in_system:
+  - name: "Force Multiplication v1"
+    path: "C:\\Users\\MarsBase\\Documents\\Force Multiplication v1"
+    status: "legacy human knowledge base — read-only reference, do not index"
+  - name: "agentA-Z keyboard project"
+    path: "C:\\Users\\MarsBase\\Documents\\agentA-Z"
+    status: "iceboxed 2026-04-19, own repo, non-vault folder"
+
+# Paths excluded from ALL scans (context-compiler, drift-detector, exporter)
+scan_excludes:
+  - "node_modules"
+  - "llm-orchestrator"          # separate project, extract to own repo
+  - "Claude_on_Claude"          # separate repo nested here, extract
+  - "n8n-workflows"             # belongs in Local-Network-Hub
+  - ".obsidian"
+  - ".smart-env"
+  - ".git"
+  - ".claude"
+  - "assets"
+  - "C:\\Users\\MarsBase\\Documents\\Claude_Vault"   # literal-path ghost dir (vault_monitor.py bug)
 
 context_compiler:
   token_budget: 8000          # max tokens for a briefing packet
@@ -16,6 +59,7 @@ context_compiler:
     declared_importance: 0.2  # explicit priority tag
   briefing_output: "_system/_briefing.md"
   stale_threshold_days: 7     # flag notes not verified in this window
+  # Plugins should read top-level scan_excludes
 
 decision_ledger:
   id_prefix: "DEC"
@@ -36,3 +80,10 @@ session:
   id_format: "SES-{date}-{seq}"
   auto_close_after_hours: 4
   log_files_accessed: true
+
+# Training-data preservation — do NOT prune these paths without confirmation
+training_data_preserved:
+  - "_system/logs/"
+  - "llm-orchestrator/training_data/"
+  - "sessions/"
+  - "inbox/"
