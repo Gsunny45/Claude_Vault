@@ -1,13 +1,13 @@
 # API Budgets & Credits
 
-Last updated: 2026-04-19 (keys deactivated by Mars)
+Last updated: 2026-05-04 (vault-sync session — staleness sweep)
 
 ## Active Balances
 
 | Provider | Balance | Status | Notes |
 |----------|---------|--------|-------|
 | **Gemini** | Free tier | LIVE in .env | Confirmed PASS, gemini-3-flash-preview |
-| **Pinecone** | $300.00 credit | LIVE in .env | Index created, 21 days from 4/13 (~expires 5/4) |
+| **Pinecone** | $300.00 credit | EXPIRED 2026-05-04 | 21-day grant from 4/13 has lapsed. Evaluate ChromaDB fallback or renew. |
 | **Claude API** | $4.90 remaining | Available | Anthropic API credits |
 | **OpenRouter** | $10.00 remaining | DEACTIVATED 2026-04-19 | Needs fresh key when re-enabled |
 | **Groq** | Free tier | DEACTIVATED 2026-04-19 | Needs fresh key when re-enabled |
@@ -17,7 +17,7 @@ Last updated: 2026-04-19 (keys deactivated by Mars)
 | **Mistral** | Dead key | Needs $10 | Not operational |
 | **LlamaIndex Cloud** | 10,000 credits | Have account | cloud.llamaindex.ai |
 | **LangChain** | Have API key | Available | Unknown balance |
-| **n8n** | Trial | Expires 4/20 (7 days!) | CRITICAL: extract workflows |
+| **n8n** | Trial | EXPIRED 2026-04-20 | Trial lapsed 14 days ago. Check TSK-0004 for extraction status. Self-host or renew if needed. |
 | **OpenAI** | No key | — | Not configured |
 
 ## Claude Usage Context (as of 4/13 15:43)
@@ -28,15 +28,15 @@ Last updated: 2026-04-19 (keys deactivated by Mars)
 
 ## Keys Currently Live in .env
 - GEMINI_API_KEY ✓ (rotated/fresh)
-- PINECONE_API_KEY ✓ (fresh)
-- PINECONE_HOST ✓ (fresh)
+- PINECONE_API_KEY ✓ (credit expired 5/4 — key still valid but no credits)
+- PINECONE_HOST ✓ (index may be deleted after credit lapse)
 - All others: DEACTIVATED by Mars 2026-04-19 — generate fresh keys when ready to re-enable
 
 ## Priority Order (cost efficiency)
 1. Free forever: Groq, Gemini, OpenRouter free pool, Ollama local
 2. Cheap: DeepSeek ($4.99), Claude API ($4.90)
 3. Moderate: Perplexity ($6.90), OpenRouter paid ($10)
-4. Time-limited: Pinecone ($300/21 days), n8n (7 days), LlamaIndex (10K credits)
+4. Time-limited: LlamaIndex (10K credits). Pinecone EXPIRED 5/4, n8n EXPIRED 4/20
 5. Dormant: Mistral (dead), OpenAI (no key)
 
 ## Frontend Token Opportunities (Mars' vision)
