@@ -1,6 +1,6 @@
-# Secrets — never track
+# Secrets — never track (no exceptions, .env.example included)
 **/.env
-!**/.env.example
+**/.env.*
 
 # Node dependencies
 **/node_modules/
