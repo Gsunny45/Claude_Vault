@@ -76,6 +76,24 @@ current power-user standards. **Audit + plan only — no content changes this ro
    `graph-views.html` at root. Clutter; some likely belong in `07 - Archive/` or `.gitignore`.
 8. **README freshness:** root README vs `README (1).md` — pick one, date it.
 
+## EXECUTION STATUS (2026-05-29)
+
+**Phase A — DONE.** Committed 25 days of pending work (360 files, `678fb49..ddae839`); resumed
+versioning. Archived loose artifacts (`Vault-Masters.zip ×3`, `README (1).md`, stray html) to
+`07 - Archive/_loose_artifacts_2026-05-29/`; added `*.zip` to `.gitignore`; created a proper
+human-facing root `README.md` (AGENTS.md stays agent-facing).
+
+**Phase B — DONE.** Rebranded CyberDeck→HermeticA-Z (`ddae839..303013b`): SKILL.md frontmatter
+(`cyberdecka-z-design`→`hermetica-z-design`, palette in description, cyberpunk marked
+deprecated), CSS header (AgentA-Z→HermeticA-Z; canonical `--hm-*` palette already present), the
+design-system README, 7 live `ui_kits/keyboard/*` files, and 4 design notes (Keyboard_AI_Vault,
+Hermes-Phone-Vault). Folder renamed `CyberdeckA-Z Design System`→`HermeticA-Z Design System` via
+`git mv`. Live cyberpunk preview marked DEPRECATED (not deleted). **`versions/v1-baseline/` left
+untouched** — intentional historical snapshot. Zero residual product-name refs in live files.
+
+**Remaining (Phases C/D/E — not yet done):** Bases-first methodology (gap #3), Codex→open-standard
+reframe (gap #4), progressive-disclosure split (gap #5), distribution manifest (gap #6).
+
 ## 4. Gap-fill plan (sequenced; effort tags)
 
 **Phase A — Hygiene & versioning (S, do first):**
