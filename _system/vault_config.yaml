@@ -33,16 +33,16 @@ not_in_system:
   - name: "Force Multiplication v1"
     path: "C:\\Users\\MarsBase\\Documents\\Force Multiplication v1"
     status: "legacy human knowledge base — read-only reference, do not index"
-  - name: "agentA-Z keyboard project"
-    path: "C:\\Users\\MarsBase\\Documents\\agentA-Z"
-    status: "iceboxed 2026-04-19, own repo, non-vault folder"
+  - name: "android-ai-keyboard-harness (injection keyboard)"
+    path: "C:\\Users\\MarsBase\\Documents\\android-ai-keyboard-harness"
+    status: "ACTIVE project, un-iceboxed 2026-05-28 (DEC-0004), go-live 2026-05-29 (DEC-0005). Own repo, non-vault folder. agentA-Z path never scaffolded."
 
 # Paths excluded from ALL scans (context-compiler, drift-detector, exporter)
 scan_excludes:
   - "node_modules"
-  - "llm-orchestrator"          # separate project, extract to own repo
-  - "Claude_on_Claude"          # separate repo nested here, extract
-  - "n8n-workflows"             # belongs in Local-Network-Hub
+  - "llm-orchestrator"          # EXTRACTED 2026-05-29 (no longer nested); kept as defensive exclude
+  - "Claude_on_Claude"          # EXTRACTED 2026-05-29 (no longer nested); kept as defensive exclude
+  - "n8n-workflows"             # RESOLVED 2026-05-29: canonical copy in Local-Network-Hub; vault dup archived. Exclude kept as defensive guard.
   - ".obsidian"
   - ".smart-env"
   - ".git"

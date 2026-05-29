@@ -8,18 +8,41 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Claude_Vault** is the AI operational layer — a persistent cognitive scaffold for Claude Code, Claude Desktop, Claude API, and local models. It stores decisions, knowledge, sessions, and tasks for AI agents. It is **not** a human notebook, **not** a monitoring vault, **not** a knowledge-retrieval (RAG) vault.
 
-## Ecosystem — 4-Vault Architecture
+## Ecosystem — Tiered N-Vault Architecture
 
+> Reframed 2026-05-29 ([[decisions/DEC-0006]]). The old "4-vault" label under-described
+> reality (~8 vaults exist). Tiers below reflect role, not priority. Separation-of-concerns
+> from [[decisions/DEC-0003]] still governs: operational ≠ monitoring ≠ orchestration ≠ retrieval.
+
+### Core operational
 | Vault | Path | Role | Repo |
 |-------|------|------|------|
 | **Claude_Vault** (this) | `C:\Users\MarsBase\Documents\Claude_Vault` | AI operational layer — decisions, knowledge, sessions, tasks for AI agents | `github.com/Gsunny45/Claude_Vault` |
-| **Command_Vault** | `C:\Users\MarsBase\Documents\Command_Vault` | Monitoring / observability — reads all vaults, writes health reports, dashboards, alerts. The control plane. | TBD — own repo required |
-| **Local-Network-Hub** | `C:\Users\MarsBase\Documents\Local-Network-Hub` | Orchestration — REST API, webhooks, routes work between vaults and agents | TBD — own repo required |
-| **RAG_Vault** | `C:\Users\MarsBase\Documents\RAG_Vault` | Knowledge base for retrieval (replaces the role Force Multiplication v1 was filling) | TBD — own repo required |
+
+### Supporting (control / orchestration / retrieval)
+| Vault | Path | Role | Repo |
+|-------|------|------|------|
+| **Command_Vault** | `C:\Users\MarsBase\Documents\Command_Vault` | Monitoring / observability — reads all vaults, writes health reports, dashboards, alerts. The control plane. | `github.com/Gsunny45/Command_Vault` (init 2026-05-29) |
+| **Local-Network-Hub** | `C:\Users\MarsBase\Documents\Local-Network-Hub` | Orchestration — REST API, webhooks, routes work between vaults and agents. Owns `n8n-workflows`. | `github.com/Gsunny45/Local-Network-Hub` |
+| **RAG_Vault** | `C:\Users\MarsBase\Documents\RAG_Vault` | Knowledge base for retrieval (replaces the role Force Multiplication v1 was filling) | `github.com/Gsunny45/RAG_Vault` (init 2026-05-29) |
+
+### Hermes layer / methodology / delivery
+| Vault | Path | Role | Repo |
+|-------|------|------|------|
+| **Hermes_Vault** | `C:\Users\MarsBase\Documents\Hermes_Vault` | Hermes operational layer (read-only reference) | `github.com/Gsunny45/Hermes_Vault` |
+| **Hermes_Phone_Vault** | `C:\Users\MarsBase\Documents\Hermes_Phone_Vault` | Device ops | local-only |
+| **Vault_Skills** | `C:\Users\MarsBase\Documents\Vault_Skills` | Build methodology / design system | `github.com/Gsunny45/Vault_Skills` |
+| **Hermes_Drop_vault** | `C:\Users\MarsBase\Desktop\Hermes_Drop_vault` | File delivery target (default output) | local-only |
+
+### Boundary project (NOT a vault)
+| Entity | Path | Role | Repo |
+|--------|------|------|------|
+| **android-ai-keyboard-harness** | `C:\Users\MarsBase\Documents\android-ai-keyboard-harness` | Injection keyboard (FlorisBoard fork, app "HermeticA-Z"). Active (DEC-0004); go-live 2026-05-29 (DEC-0005). Holds the canonical **Hermetic_A-Z_Vault** visual authority at `...\android-ai-keyboard-harness\Hermetic_A-Z_Vault`. | `github.com/Gsunny45/android-ai-keyboard-harness` |
 
 **Explicitly not part of this system:**
-- `Force Multiplication v1` — legacy human knowledge base. Read-only reference; do NOT index, link, or include in agent context.
-- `agentA-Z` keyboard project — iceboxed. Lives at `C:\Users\MarsBase\Documents\agentA-Z\` (non-vault folder), its own repo.
+- `Force Multiplication v1` — legacy human knowledge base. **Permanently excluded** from the agent system ([[decisions/DEC-0006]]): read-only reference, do NOT index, link, or include in agent context. No FM v1 → RAG ingestion.
+- **Keyboard boundary:** the harness is NOT a vault; its code/internals do not belong in Claude_Vault and are not pulled into active briefings. Only keyboard knowledge/handoff pointers ([[knowledge/KNW-0024]], [[knowledge/KNW-0008]], [[knowledge/KNW-0025-keyboard-vault-injection-tests]]) live here. The `agentA-Z` name / `Documents\agentA-Z\` path was never scaffolded — superseded by the harness name.
+- **Visual authority:** canonical Hermetic_A-Z brand/palette assets live under the harness path above. The `C:\Users\MarsBase\Pictures\Hermetic_A-Z_Vault` path named in older docs does not exist and is retired.
 
 ## First Steps Every Session
 
@@ -47,12 +70,14 @@ Task_Board.md      Kanban view of task pipeline
 
 ### Folders that do NOT belong here (repo hygiene)
 
-These are currently nested inside Claude_Vault but are separate projects and must be extracted to sibling folders with their own repos. See [[knowledge/KNW-0022]] for the extraction plan.
+**RESOLVED 2026-05-29** ([[decisions/DEC-0006]], [[knowledge/KNW-0026]]). All four hygiene items are cleared:
 
-- `llm-orchestrator/` — standalone project, no git yet. Target: `C:\Users\MarsBase\Documents\llm-orchestrator\` + new repo.
-- `Claude_on_Claude/` — already has its own remote (`github.com/Gsunny45/Claude_on_Claude.git`), but is nested. Target: extract to `C:\Users\MarsBase\Documents\Claude_on_Claude\`.
-- `n8n-workflows/` — belongs in Local-Network-Hub (orchestration).
-- `C:\Users\MarsBase\Documents\Claude_Vault\` (literal-path ghost directory) — bug: `vault_monitor.py` writes to this string when run in WSL. Contains misrouted monitor logs only. Do not delete until logs are merged into `_system/logs/`.
+- `llm-orchestrator/` — ✅ extracted (no longer nested).
+- `Claude_on_Claude/` — ✅ extracted (no longer nested).
+- `n8n-workflows/` — ✅ de-duplicated 2026-05-29: the canonical copies already live in Local-Network-Hub; the redundant Claude_Vault copy (byte-identical) was archived to `exports/_archived_2026-05-29/` and removed from the vault root. TSK-0004 closed as superseded.
+- `C:\Users\MarsBase\Documents\Claude_Vault\` (literal-path ghost directory) — ✅ gone.
+
+Scan-excludes for `llm-orchestrator`/`Claude_on_Claude` are retained as defensive guards only.
 
 ## Frontmatter Schema
 

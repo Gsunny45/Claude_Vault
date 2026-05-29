@@ -1,5 +1,5 @@
 {
-  "accentColor": "#e6a700",
+  "accentColor": "#A855F7",
   "baseFontSize": 16,
   "textFontFamily": "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
   "monospaceFontFamily": "JetBrains Mono, Fira Code, Cascadia Code, Consolas, monospace",
@@ -7,6 +7,7 @@
   "cssTheme": "Solarized",
   "interfaceFontFamily": "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
   "enabledCssSnippets": [
+    "hermetic-os",
     "vault-ai"
   ]
 }

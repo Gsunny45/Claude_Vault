@@ -1,30 +1,32 @@
 # API Budgets & Credits
 
-Last updated: 2026-05-04 (vault-sync session — staleness sweep)
+Last updated: 2026-05-27 (session-5 state sync — post keyboard project sessions)
 
 ## Active Balances
 
 | Provider | Balance | Status | Notes |
 |----------|---------|--------|-------|
-| **Gemini** | Free tier | LIVE in .env | Confirmed PASS, gemini-3-flash-preview |
+| **Gemini** | Free tier | ACTIVE | 2-3 keys available. Live in keyboard app triggers.json (priority 4/5). |
+| **Groq** | Free tier | ACTIVE | 3 keys available (~160K TPD combined). Live in keyboard app triggers.json (priority 2/3). Primary daily driver. |
 | **Pinecone** | $300.00 credit | EXPIRED 2026-05-04 | 21-day grant from 4/13 has lapsed. Evaluate ChromaDB fallback or renew. |
-| **Claude API** | $4.90 remaining | Available | Anthropic API credits |
+| **Claude API** | $0.00 remaining | EXHAUSTED | Burned across keyboard project sessions. Do NOT route anything here. |
+| **DeepSeek** | $0.00 remaining | EXHAUSTED | Confirmed $0. Do NOT use. |
 | **OpenRouter** | $10.00 remaining | DEACTIVATED 2026-04-19 | Needs fresh key when re-enabled |
-| **Groq** | Free tier | DEACTIVATED 2026-04-19 | Needs fresh key when re-enabled |
-| **DeepSeek** | $4.99 remaining | DEACTIVATED 2026-04-19 | Needs fresh key when re-enabled |
 | **Perplexity** | $6.90 remaining | DEACTIVATED 2026-04-19 | Needs fresh key when re-enabled |
 | **Grok (xAI)** | Active credits | DEACTIVATED 2026-04-19 | Needs fresh key when re-enabled |
+| **Cerebras** | Unknown | ACTIVE in ladder | Priority 6 in keyboard app. Free tier — check if key still valid. |
 | **Mistral** | Dead key | Needs $10 | Not operational |
 | **LlamaIndex Cloud** | 10,000 credits | Have account | cloud.llamaindex.ai |
 | **LangChain** | Have API key | Available | Unknown balance |
-| **n8n** | Trial | EXPIRED 2026-04-20 | Trial lapsed 14 days ago. Check TSK-0004 for extraction status. Self-host or renew if needed. |
+| **n8n** | Trial | EXPIRED 2026-04-20 | Trial lapsed. Self-host or renew. |
 | **OpenAI** | No key | — | Not configured |
 
-## Claude Usage Context (as of 4/13 15:43)
-- Pro plan: 72% session used, resets in ~4.5 hrs
-- Weekly: 93% used, resets Tue 10:00 PM
-- Claude API balance: $4.90
-- Strategy: conserve Claude for high-value tasks, route everything else through free tiers
+## Claude Usage Context (as of 2026-05-27)
+- Claude API balance: $0.00 — EXHAUSTED. Do not route to Anthropic API.
+- DeepSeek: $0.00 — EXHAUSTED. Do not route.
+- Strategy: Groq (free) → Gemini (free) → Cerebras (free if valid) for all inference
+- Hermes desktop config: route generation to Gemini/Groq/Skywork (localhost:43111)
+- Keyboard app ladder: local(Note20 Qwen) → groq → groq2 → gemini_1 → gemini_2 → cerebras
 
 ## Keys Currently Live in .env
 - GEMINI_API_KEY ✓ (rotated/fresh)
