@@ -3,12 +3,11 @@
  * Canonical palette: violet / sky-blue / amber on near-black
  * Source of truth: HermeticTokens.kt + HANDOFF_CLAUDE_DESIGN.md
  *
- * For Claude_Vault: this runs ALONGSIDE vault-ai.css.
- * hermetic-os.css sets the base palette; vault-ai.css adds
- * operational styling (severity tags, custom callouts, dataview).
- * Both snippets should be enabled.
+ * Usage: Copy to any vault's .obsidian/snippets/ and enable in
+ *        Settings → Appearance → CSS Snippets
+ * Pairs with: Cyber Glow or Minimal theme (dark mode)
  *
- * Updated: 2026-05-25
+ * Updated: 2026-05-30
  */
 
 /* ── Override Obsidian CSS variables (dark mode) ────────────────────── */
@@ -162,6 +161,22 @@
   background: rgba(168, 85, 247, 0.04);
 }
 
+/* ── Dataview tables ────────────────────────────────────────────────── */
+.theme-dark .dataview.table-view-table th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.theme-dark .dataview.table-view-table td {
+  font-size: 0.9em;
+}
+
+.theme-dark .dataview.table-view-table a {
+  color: #38BDF8;
+}
+
 /* ── Kanban board cards ─────────────────────────────────────────────── */
 .theme-dark .kanban-plugin__board {
   background: #080808;
@@ -187,8 +202,7 @@
   box-shadow: inset 0 0 80px rgba(168, 85, 247, 0.02);
 }
 
-/* ── Callouts — Hermetic palette base ───────────────────────────────── */
-/* NOTE: vault-ai.css adds drift/decision/knowledge callouts on top */
+/* ── Callouts — Hermetic palette ────────────────────────────────────── */
 .theme-dark .callout[data-callout="info"]    { --callout-color: 56, 189, 248; }
 .theme-dark .callout[data-callout="tip"]     { --callout-color: 168, 85, 247; }
 .theme-dark .callout[data-callout="success"] { --callout-color: 34, 197, 94; }

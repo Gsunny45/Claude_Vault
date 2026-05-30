@@ -1,39 +1,22 @@
 {
-  "colorGroups": [
-    {
-      "query": "path:decisions/",
-      "color": "#F59E0B"
-    },
-    {
-      "query": "path:sessions/",
-      "color": "#38BDF8"
-    },
-    {
-      "query": "path:knowledge/",
-      "color": "#A855F7"
-    },
-    {
-      "query": "path:tasks/",
-      "color": "#10B981"
-    },
-    {
-      "query": "path:_system/",
-      "color": "#6B7280"
-    },
-    {
-      "query": "path:inbox/",
-      "color": "#EF4444"
-    }
-  ],
-  "lineSizeMultiplier": 1,
-  "nodeSizeMultiplier": 1.1,
-  "hideUnresolved": true,
-  "collapseColorGroups": false,
-  "showArrow": true,
-  "showAttachments": false,
-  "linkDistance": 250,
-  "showOrphans": true,
+  "collapse-filter": true,
+  "search": "",
   "showTags": true,
+  "showAttachments": false,
+  "hideUnresolved": true,
+  "showOrphans": true,
+  "collapse-color-groups": true,
+  "colorGroups": [],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
   "repelStrength": 10,
-  "lineColor": "#374151"
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.4364798277705541,
+  "close": false
 }
