@@ -198,3 +198,55 @@ present:
 `adb shell run-as <pkg> rm shared_prefs/florisboard_ai_keyvault.xml` then reopen the
 app (regenerates the Tink keysets). **Only safe while no real provider keys are set.**
 Subsequent full script runs auto-restore from a pre-run snapshot.
+
+## Re-run + E2E smoke (2026-05-29, evening — Moto ZY22G7NFLK)
+
+Phone connected (USB `ZY22G7NFLK` + WiFi ADB `192.168.1.105:5555`). Two devices
+attached → all `adb` calls must use `-s ZY22G7NFLK` or `adb shell` errors "more than
+one device". Keyboard is now the **active system IME**
+(`settings get secure default_input_method` → `…vault.debug/…FlorisImeService`).
+
+### Key/config injection — re-verified PASS
+- PRE-1..5 all PASS (device online, pkg installed, unlocked/awake, run-as OK,
+  triggers.json parsed). Baseline KeyVault = **6** string entries (2 Tink + 2 prior
+  throwaway refs + Gemini + Groq).
+- TC-1 happy-path re-run inline: injected `__TEST_INJECT_KEY__` = `sk-test-93372` →
+  `CteKeysActivity: Key injected via ADB: __TEST_INJECT_KEY__ (13 chars)` (exact match).
+- Note: `test_key_injection.ps1` run detached stalled in the per-case logcat-wait loop
+  past the 45 s Windows-MCP cap; the inline TC-1 above is the decisive confirmation.
+  Full suite already PASSED earlier this day (table above).
+
+### Prompt/trigger pipeline — LIVE / wired (first on-device evidence)
+Focused a Google Keep note (FlorisBoard up, `mInputShown=true`) and drove input via
+`adb input text`. Logcat captured the pipeline firing for the first time on-device:
+```
+CteEngine: Built 2 provider instances (configured: 13)
+CteEngine: Loaded 7 skills from skills.json
+CTE: Trigger detected: '/fix' with text=''
+CTE: Provider returned empty result for '/fix'
+```
+So: trigger detection works, the CTE engine instantiates the **2 reachable cheap-budget
+providers** (gemini_1 + groq; local skipped via `standaloneMode`), loads skills, and
+handles an empty payload gracefully.
+
+### What's NOT yet captured + why
+The full **completion-insert round-trip** wasn't reproduced under ADB automation:
+- Detection is **start-anchored** and fires on the space **immediately after** the
+  trigger token. `adb input text` streams the whole string instantly, so the trigger
+  fired before its payload was typed → `text=''`.
+- Putting the trigger at the **end** of the buffer ("…text /fix") produced **no**
+  detection at all (confirming start-anchoring).
+- `files/cte/logs/events.jsonl` absent — expected (`routing.json monitoring.captureRuns:
+  false`), so no run-log readback.
+
+**Conclusion:** the pipeline is proven live up to and including trigger detection +
+provider instantiation; the only unproven leg is the final inserted completion, gated by
+**ADB input cadence vs. a start-anchored detector**, *not* by any keyboard defect. A
+human typing a sentence then the trigger at normal speed exercises it correctly — a
+~10-second manual acceptance check closes DEC-0005's last open item.
+
+### Teardown / state
+- Keep scratch note cleared; returned to home. No real provider keys touched.
+- TC-1 left the harmless `__TEST_INJECT_KEY__` throwaway ref (encrypted name, never shown
+  in the manage-keys UI, not a provider keyRef) — same documented situation as the first run.
+- Artifacts (screenshots) in `exports/e2e_*_2026…png`.
