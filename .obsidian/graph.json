@@ -1,58 +1,39 @@
 {
-  "collapse-filter": false,
-  "search": "",
-  "showTags": true,
-  "showAttachments": false,
-  "hideUnresolved": true,
-  "showOrphans": true,
-  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "path:decisions/",
-      "color": {
-        "a": 1,
-        "rgb": 16753920
-      }
+      "color": "#F59E0B"
     },
     {
       "query": "path:sessions/",
-      "color": {
-        "a": 1,
-        "rgb": 4359668
-      }
+      "color": "#38BDF8"
     },
     {
       "query": "path:knowledge/",
-      "color": {
-        "a": 1,
-        "rgb": 5025616
-      }
+      "color": "#A855F7"
     },
     {
       "query": "path:tasks/",
-      "color": {
-        "a": 1,
-        "rgb": 16724787
-      }
+      "color": "#10B981"
     },
     {
       "query": "path:_system/",
-      "color": {
-        "a": 1,
-        "rgb": 8421504
-      }
+      "color": "#6B7280"
+    },
+    {
+      "query": "path:inbox/",
+      "color": "#EF4444"
     }
   ],
-  "collapse-display": false,
-  "showArrow": true,
-  "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1.1,
   "lineSizeMultiplier": 1,
-  "collapse-forces": true,
-  "centerStrength": 0.5,
-  "repelStrength": 10,
-  "linkStrength": 1,
+  "nodeSizeMultiplier": 1.1,
+  "hideUnresolved": true,
+  "collapseColorGroups": false,
+  "showArrow": true,
+  "showAttachments": false,
   "linkDistance": 250,
-  "scale": 0.40984794680594355,
-  "close": true
+  "showOrphans": true,
+  "showTags": true,
+  "repelStrength": 10,
+  "lineColor": "#374151"
 }
