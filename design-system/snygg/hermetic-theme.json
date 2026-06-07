@@ -1,0 +1,383 @@
+{
+  "$schema": "https://florisboard.org/schemas/snygg/v1",
+  "_meta": {
+    "name": "Hermetic OS",
+    "version": "1.0.0",
+    "author": "Mars / Hermetic System",
+    "description": "Cyber-mystic keyboard theme for HermeticA-Z (FlorisBoard fork)",
+    "generated_from": "tokens.yaml",
+    "generator": "sync-tokens.py",
+    "aesthetic": "arcane-void"
+  },
+
+  "@defines": {
+    "void950": "#080808",
+    "void900": "#0D0D0F",
+    "void850": "#111114",
+    "void800": "#16161A",
+    "void750": "#1C1C22",
+    "void700": "#22222A",
+    "void650": "#282832",
+    "void600": "#2E2E38",
+    "void500": "#3A3A46",
+    "void400": "#4E4E5C",
+    "void300": "#6A6A7A",
+    "void200": "#8E8E9E",
+    "void100": "#B4B4C2",
+    "void50":  "#DCDCE6",
+
+    "violet950": "#1A1540",
+    "violet900": "#2D2466",
+    "violet800": "#42358C",
+    "violet700": "#5A4CB3",
+    "violet600": "#7464D9",
+    "violet500": "#8C7BFF",
+    "violet400": "#A296FF",
+    "violet300": "#B8B0FF",
+    "violet200": "#CEC9FF",
+    "violet100": "#E4E1FF",
+
+    "sky950": "#0A2A3D",
+    "sky900": "#0F3752",
+    "sky800": "#1D5E8C",
+    "sky700": "#2878B3",
+    "sky600": "#3A9AD9",
+    "sky500": "#52C7FF",
+    "sky400": "#74D4FF",
+    "sky300": "#96E0FF",
+    "sky200": "#B8EBFF",
+
+    "amber950": "#2E2510",
+    "amber900": "#3E3115",
+    "amber800": "#6B5524",
+    "amber700": "#8A6E2E",
+    "amber600": "#AB9144",
+    "amber500": "#D2B35E",
+    "amber400": "#DCCA7E",
+    "amber300": "#E5D99E",
+    "amber200": "#EEE7BE",
+
+    "statusSuccess": "#4ADE80",
+    "statusError":   "#F87171",
+    "statusWarning": "#FBBF24",
+
+    "keyRadius": 8,
+    "keyGap":    4,
+    "keyPaddingH": 6,
+    "keyPaddingV": 10,
+
+    "transparent": "#00000000",
+    "scrimDark":   "#B8080808"
+  },
+
+  "keyboard": {
+    "background": {
+      "type": "solid",
+      "color": "@defines/void950"
+    },
+    "border": {
+      "top": {
+        "width": 1,
+        "color": "@defines/void700"
+      }
+    },
+    "popupBackground": "@defines/void800",
+    "popupBorderColor": "@defines/void600",
+    "popupBorderWidth": 1,
+    "popupCornerRadius": "@defines/keyRadius",
+    "popupShadow": {
+      "color": "#00000088",
+      "offsetX": 0,
+      "offsetY": 4,
+      "blur": 12
+    }
+  },
+
+  "key": {
+    "normal": {
+      "alpha": {
+        "background": {
+          "type": "gradient",
+          "direction": "top_to_bottom",
+          "colors": ["@defines/void750", "@defines/void800"]
+        },
+        "foreground": "@defines/void50",
+        "cornerRadius": "@defines/keyRadius",
+        "fontSize": 18,
+        "fontWeight": 500,
+        "borderWidth": 1,
+        "borderColor": "@defines/void650",
+        "shadowColor": "#00000040",
+        "shadowOffsetY": 1,
+        "shadowBlur": 2,
+        "paddingHorizontal": "@defines/keyPaddingH",
+        "paddingVertical": "@defines/keyPaddingV"
+      },
+      "numeric": {
+        "background": {
+          "type": "gradient",
+          "direction": "top_to_bottom",
+          "colors": ["@defines/void750", "@defines/void800"]
+        },
+        "foreground": "@defines/void50",
+        "cornerRadius": "@defines/keyRadius",
+        "fontSize": 18,
+        "fontWeight": 400,
+        "borderWidth": 1,
+        "borderColor": "@defines/void650"
+      },
+      "symbol": {
+        "background": {
+          "type": "gradient",
+          "direction": "top_to_bottom",
+          "colors": ["@defines/void750", "@defines/void800"]
+        },
+        "foreground": "@defines/void100",
+        "cornerRadius": "@defines/keyRadius",
+        "fontSize": 14,
+        "fontWeight": 400,
+        "borderWidth": 1,
+        "borderColor": "@defines/void650"
+      },
+      "function": {
+        "background": {
+          "type": "solid",
+          "color": "@defines/void850"
+        },
+        "foreground": "@defines/void200",
+        "cornerRadius": "@defines/keyRadius",
+        "fontSize": 12,
+        "fontWeight": 600,
+        "borderWidth": 1,
+        "borderColor": "@defines/void700"
+      },
+      "action": {
+        "background": {
+          "type": "solid",
+          "color": "@defines/violet900"
+        },
+        "foreground": "@defines/violet300",
+        "cornerRadius": "@defines/keyRadius",
+        "fontSize": 14,
+        "fontWeight": 600,
+        "borderWidth": 1,
+        "borderColor": "@defines/violet700",
+        "iconColor": "@defines/violet400",
+        "iconSize": 20
+      },
+      "enter": {
+        "background": {
+          "type": "solid",
+          "color": "@defines/violet500"
+        },
+        "foreground": "@defines/void950",
+        "cornerRadius": "@defines/keyRadius",
+        "fontWeight": 700,
+        "iconColor": "@defines/void950",
+        "iconSize": 22,
+        "shadowColor": "#8C7BFF40",
+        "shadowOffsetY": 0,
+        "shadowBlur": 12
+      },
+      "space": {
+        "background": {
+          "type": "gradient",
+          "direction": "top_to_bottom",
+          "colors": ["@defines/void700", "@defines/void750"]
+        },
+        "foreground": "@defines/void200",
+        "cornerRadius": "@defines/keyRadius",
+        "fontSize": 12,
+        "fontWeight": 500,
+        "borderWidth": 1,
+        "borderColor": "@defines/void600"
+      }
+    },
+    "pressed": {
+      "alpha": {
+        "background": {
+          "type": "gradient",
+          "direction": "top_to_bottom",
+          "colors": ["@defines/void800", "@defines/void850"]
+        },
+        "foreground": "@defines/violet400",
+        "cornerRadius": "@defines/keyRadius",
+        "borderWidth": 1,
+        "borderColor": "@defines/violet700",
+        "shadowColor": "#8C7BFF30",
+        "shadowOffsetY": 0,
+        "shadowBlur": 8
+      },
+      "function": {
+        "background": {
+          "type": "solid",
+          "color": "@defines/void800"
+        },
+        "foreground": "@defines/violet400",
+        "borderWidth": 1,
+        "borderColor": "@defines/violet800"
+      },
+      "action": {
+        "background": {
+          "type": "solid",
+          "color": "@defines/violet800"
+        },
+        "foreground": "@defines/violet200",
+        "borderWidth": 1,
+        "borderColor": "@defines/violet600"
+      },
+      "enter": {
+        "background": {
+          "type": "solid",
+          "color": "@defines/violet600"
+        },
+        "foreground": "@defines/void950",
+        "shadowColor": "#8C7BFF60",
+        "shadowOffsetY": 0,
+        "shadowBlur": 20
+      },
+      "space": {
+        "background": {
+          "type": "solid",
+          "color": "@defines/void750"
+        },
+        "foreground": "@defines/violet400",
+        "borderColor": "@defines/violet800"
+      }
+    }
+  },
+
+  "keyHint": {
+    "foreground": "@defines/void400",
+    "fontSize": 10,
+    "fontWeight": 400,
+    "position": "top_right",
+    "marginTop": 2,
+    "marginRight": 4
+  },
+
+  "keyPopup": {
+    "background": "@defines/void750",
+    "foreground": "@defines/void50",
+    "borderColor": "@defines/void600",
+    "borderWidth": 1,
+    "cornerRadius": 10,
+    "fontSize": 22,
+    "fontWeight": 500,
+    "shadow": {
+      "color": "#00000066",
+      "offsetY": 4,
+      "blur": 16
+    },
+    "extended": {
+      "background": "@defines/void800",
+      "foreground": "@defines/void50",
+      "selectedBackground": "@defines/violet900",
+      "selectedForeground": "@defines/violet300",
+      "borderColor": "@defines/void600",
+      "cornerRadius": "@defines/keyRadius"
+    }
+  },
+
+  "smartbar": {
+    "background": "@defines/void900",
+    "foreground": "@defines/void200",
+    "borderBottom": {
+      "width": 1,
+      "color": "@defines/void700"
+    },
+    "actionButton": {
+      "background": "@defines/transparent",
+      "foreground": "@defines/violet400",
+      "pressedBackground": "@defines/violet900",
+      "pressedForeground": "@defines/violet300",
+      "iconSize": 20
+    },
+    "candidateChip": {
+      "background": "@defines/transparent",
+      "foreground": "@defines/void50",
+      "selectedBackground": "@defines/violet900",
+      "selectedForeground": "@defines/violet400",
+      "fontSize": 14,
+      "fontWeight": 500,
+      "cornerRadius": 6,
+      "paddingHorizontal": 10,
+      "paddingVertical": 6
+    },
+    "clipboardChip": {
+      "background": "@defines/void800",
+      "foreground": "@defines/void100",
+      "borderColor": "@defines/void650",
+      "borderWidth": 1,
+      "cornerRadius": "@defines/keyRadius",
+      "fontSize": 12,
+      "maxLines": 2
+    }
+  },
+
+  "glideTrail": {
+    "color": "@defines/violet500",
+    "width": 3,
+    "opacity": 0.5,
+    "fadeOutDuration": 200
+  },
+
+  "oneHanded": {
+    "panelBackground": "@defines/void900",
+    "buttonForeground": "@defines/void300",
+    "buttonPressedForeground": "@defines/violet400",
+    "borderColor": "@defines/void700"
+  },
+
+  "clipboard": {
+    "background": "@defines/void900",
+    "headerForeground": "@defines/void200",
+    "itemBackground": "@defines/void800",
+    "itemForeground": "@defines/void50",
+    "itemBorderColor": "@defines/void650",
+    "itemCornerRadius": "@defines/keyRadius",
+    "pinIndicatorColor": "@defines/amber500",
+    "emptyMessage": {
+      "foreground": "@defines/void400",
+      "fontSize": 14
+    }
+  },
+
+  "mediaInput": {
+    "background": "@defines/void900",
+    "tabForeground": "@defines/void300",
+    "tabSelectedForeground": "@defines/violet400",
+    "tabIndicatorColor": "@defines/violet500",
+    "searchInputBackground": "@defines/void800",
+    "searchInputForeground": "@defines/void50",
+    "searchInputPlaceholder": "@defines/void400",
+    "searchInputBorderColor": "@defines/void650"
+  },
+
+  "injectionIndicator": {
+    "idle": {
+      "dotColor": "@defines/void500",
+      "dotSize": 6,
+      "borderColor": "@defines/transparent"
+    },
+    "active": {
+      "dotColor": "@defines/statusSuccess",
+      "dotSize": 6,
+      "glowColor": "#4ADE8040",
+      "glowBlur": 8,
+      "borderColor": "@defines/transparent"
+    },
+    "error": {
+      "dotColor": "@defines/statusError",
+      "dotSize": 6,
+      "glowColor": "#F8717140",
+      "glowBlur": 8
+    },
+    "processing": {
+      "dotColor": "@defines/amber500",
+      "dotSize": 6,
+      "pulseAnimation": true,
+      "pulseDuration": 1500
+    }
+  }
+}

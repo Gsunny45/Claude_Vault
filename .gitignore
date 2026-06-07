@@ -36,6 +36,10 @@ _system/_token_state.json
 # Path artifact
 C:UsersMarsBaseDocumentsClaude_Vault/
 
+# Debug session artifacts (screenshots, UI dumps at root)
+/*.png
+/*.xml
+
 # OS files
 desktop.ini
 Thumbs.db

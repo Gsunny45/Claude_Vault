@@ -2,6 +2,23 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+---
+
+## ⛔ MANDATORY PRE-WORK PROTOCOL — NO EXCEPTIONS
+
+**Before using ANY tool, touching ANY file, or running ANY command:**
+
+1. Read `C:\Users\MarsBase\Documents\Claude_Vault\_system\_briefing.md`
+2. Read `C:\Users\MarsBase\Documents\Claude_Vault\_system\_drift_report.md`
+3. If the task involves the **Note 20 Ultra or any ADB/Termux work**: read `C:\Users\MarsBase\Documents\Base Note20 Ultra\CLAUDE.md` — it has device-specific injection rules that WILL save you from breaking things
+4. If the task involves any other specific vault: read that vault's CLAUDE.md first
+
+**Why this is non-negotiable:** Skipping this costs Mars real money every session. Rediscovering documented facts through trial and error causes breakage and wastes API budget. The notes exist precisely to prevent this. Reading them first is not optional prep — it is the first tool call of every session.
+
+**This rule takes precedence over everything else in this file.**
+
+---
+
 **Last architecture correction:** 2026-04-19 — see [[decisions/DEC-0003]].
 
 ## What This Is

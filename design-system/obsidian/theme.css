@@ -1,0 +1,843 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+ * HERMETIC OS — Obsidian Theme
+ * ═══════════════════════════════════════════════════════════════════════════════
+ * Auto-generated from tokens.yaml by sync-tokens.py
+ * DO NOT EDIT MANUALLY — changes will be overwritten on next sync.
+ *
+ * Target: Obsidian.md CSS Snippet or full theme
+ * Aesthetic: Cyber-mystic / Arcane
+ * ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+ * §1  ROOT TOKEN VARIABLES
+ * ───────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Primitive: Void ────────────────────────────────────────────────────── */
+  --void-950: #080808;
+  --void-900: #0D0D0F;
+  --void-850: #111114;
+  --void-800: #16161A;
+  --void-750: #1C1C22;
+  --void-700: #22222A;
+  --void-650: #282832;
+  --void-600: #2E2E38;
+  --void-550: #353542;
+  --void-500: #3A3A46;
+  --void-450: #44444F;
+  --void-400: #4E4E5C;
+  --void-350: #5C5C6B;
+  --void-300: #6A6A7A;
+  --void-250: #7C7C8C;
+  --void-200: #8E8E9E;
+  --void-150: #A1A1B0;
+  --void-100: #B4B4C2;
+  --void-50:  #DCDCE6;
+
+  /* ── Primitive: Violet ──────────────────────────────────────────────────── */
+  --violet-950: #1A1540;
+  --violet-900: #2D2466;
+  --violet-850: #352C78;
+  --violet-800: #42358C;
+  --violet-750: #4E40A0;
+  --violet-700: #5A4CB3;
+  --violet-650: #6758C6;
+  --violet-600: #7464D9;
+  --violet-550: #8070EC;
+  --violet-500: #8C7BFF;
+  --violet-450: #9788FF;
+  --violet-400: #A296FF;
+  --violet-350: #ADA4FF;
+  --violet-300: #B8B0FF;
+  --violet-250: #C3BDFF;
+  --violet-200: #CEC9FF;
+  --violet-150: #D9D5FF;
+  --violet-100: #E4E1FF;
+  --violet-50:  #F2F0FF;
+
+  /* ── Primitive: Sky ─────────────────────────────────────────────────────── */
+  --sky-950: #0A2A3D;
+  --sky-900: #0F3752;
+  --sky-850: #134466;
+  --sky-800: #1D5E8C;
+  --sky-750: #2268A0;
+  --sky-700: #2878B3;
+  --sky-650: #3189C6;
+  --sky-600: #3A9AD9;
+  --sky-550: #46B1EC;
+  --sky-500: #52C7FF;
+  --sky-450: #63CDFF;
+  --sky-400: #74D4FF;
+  --sky-350: #85DAFF;
+  --sky-300: #96E0FF;
+  --sky-250: #A7E6FF;
+  --sky-200: #B8EBFF;
+  --sky-150: #C9F0FF;
+  --sky-100: #DAF5FF;
+  --sky-50:  #EDFAFF;
+
+  /* ── Primitive: Amber ───────────────────────────────────────────────────── */
+  --amber-950: #2E2510;
+  --amber-900: #3E3115;
+  --amber-850: #4D3D1A;
+  --amber-800: #6B5524;
+  --amber-750: #7A622C;
+  --amber-700: #8A6E2E;
+  --amber-650: #9A8038;
+  --amber-600: #AB9144;
+  --amber-550: #BEA251;
+  --amber-500: #D2B35E;
+  --amber-450: #D7BC6E;
+  --amber-400: #DCCA7E;
+  --amber-350: #E0D18E;
+  --amber-300: #E5D99E;
+  --amber-250: #EAE0AE;
+  --amber-200: #EEE7BE;
+  --amber-150: #F2EDCE;
+  --amber-100: #F6F2DE;
+  --amber-50:  #FBF9EF;
+
+  /* ── Status Colors ──────────────────────────────────────────────────────── */
+  --status-success:     #4ADE80;
+  --status-success-dim: #166534;
+  --status-error:       #F87171;
+  --status-error-dim:   #7F1D1D;
+  --status-warning:     #FBBF24;
+  --status-warning-dim: #78350F;
+  --status-info:        #52C7FF;
+  --status-info-dim:    #0A2A3D;
+
+  /* ── Semantic: Surfaces ─────────────────────────────────────────────────── */
+  --surface-base:     var(--void-950);
+  --surface-raised:   var(--void-900);
+  --surface-elevated: var(--void-800);
+  --surface-overlay:  var(--void-750);
+  --surface-sunken:   var(--void-950);
+  --surface-scrim:    rgba(8, 8, 8, 0.72);
+
+  /* ── Semantic: Primary (Violet) ─────────────────────────────────────────── */
+  --primary:          var(--violet-500);
+  --primary-hover:    var(--violet-400);
+  --primary-pressed:  var(--violet-600);
+  --primary-disabled: var(--violet-800);
+  --primary-subtle:   var(--violet-900);
+  --on-primary:       var(--void-950);
+
+  /* ── Semantic: Secondary (Sky) ──────────────────────────────────────────── */
+  --secondary:          var(--sky-500);
+  --secondary-hover:    var(--sky-400);
+  --secondary-pressed:  var(--sky-600);
+  --secondary-disabled: var(--sky-800);
+  --secondary-subtle:   var(--sky-900);
+  --on-secondary:       var(--void-950);
+
+  /* ── Semantic: Accent (Amber) ───────────────────────────────────────────── */
+  --accent:          var(--amber-500);
+  --accent-hover:    var(--amber-400);
+  --accent-pressed:  var(--amber-600);
+  --accent-disabled: var(--amber-800);
+  --accent-subtle:   var(--amber-900);
+  --on-accent:       var(--void-950);
+
+  /* ── Semantic: Text ─────────────────────────────────────────────────────── */
+  --text-primary:   var(--void-50);
+  --text-secondary: var(--void-200);
+  --text-muted:     var(--void-300);
+  --text-disabled:  var(--void-400);
+  --text-inverse:   var(--void-950);
+  --text-link:      var(--violet-500);
+  --text-link-hover: var(--violet-400);
+
+  /* ── Semantic: Borders ──────────────────────────────────────────────────── */
+  --border-default: var(--void-700);
+  --border-subtle:  var(--void-800);
+  --border-strong:  var(--void-500);
+  --border-focus:   var(--violet-500);
+  --border-error:   var(--status-error);
+
+  /* ── Semantic: Interactive ──────────────────────────────────────────────── */
+  --hover-overlay:   rgba(140, 123, 255, 0.08);
+  --pressed-overlay: rgba(140, 123, 255, 0.16);
+  --focus-ring:      rgba(140, 123, 255, 0.48);
+  --selected-bg:     rgba(140, 123, 255, 0.12);
+
+  /* ── Typography ─────────────────────────────────────────────────────────── */
+  --font-display: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --font-body:    'Inter', 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-code:    'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  --text-2xs: 10px;
+  --text-xs:  11px;
+  --text-sm:  12px;
+  --text-base: 14px;
+  --text-md:  16px;
+  --text-lg:  18px;
+  --text-xl:  22px;
+  --text-2xl: 28px;
+  --text-3xl: 36px;
+  --text-4xl: 48px;
+
+  --leading-2xs: 14px;
+  --leading-xs:  16px;
+  --leading-sm:  18px;
+  --leading-base: 22px;
+  --leading-md:  24px;
+  --leading-lg:  28px;
+  --leading-xl:  32px;
+  --leading-2xl: 36px;
+  --leading-3xl: 44px;
+  --leading-4xl: 56px;
+
+  --weight-thin:     100;
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-black:    900;
+
+  /* ── Spacing ────────────────────────────────────────────────────────────── */
+  --space-0:   0px;
+  --space-0-5: 2px;
+  --space-1:   4px;
+  --space-1-5: 6px;
+  --space-2:   8px;
+  --space-2-5: 10px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-7:   28px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-14:  56px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+
+  /* ── Border Radius ──────────────────────────────────────────────────────── */
+  --radius-none: 0px;
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-full: 9999px;
+
+  /* ── Elevation ──────────────────────────────────────────────────────────── */
+  --shadow-0: none;
+  --shadow-1: 0 1px 2px 0 rgba(0, 0, 0, 0.40);
+  --shadow-2: 0 2px 4px -1px rgba(0, 0, 0, 0.45), 0 1px 2px -1px rgba(0, 0, 0, 0.30);
+  --shadow-3: 0 4px 12px -2px rgba(0, 0, 0, 0.50), 0 2px 4px -2px rgba(0, 0, 0, 0.35);
+  --shadow-4: 0 8px 24px -4px rgba(0, 0, 0, 0.55), 0 4px 8px -4px rgba(0, 0, 0, 0.40);
+  --shadow-5: 0 16px 48px -8px rgba(0, 0, 0, 0.60), 0 8px 16px -8px rgba(0, 0, 0, 0.45);
+
+  /* ── Glow ────────────────────────────────────────────────────────────────── */
+  --glow-violet-subtle:  0 0 6px rgba(140, 123, 255, 0.15);
+  --glow-violet-default: 0 0 12px rgba(140, 123, 255, 0.30);
+  --glow-violet-strong:  0 0 20px rgba(140, 123, 255, 0.45), 0 0 40px rgba(140, 123, 255, 0.15);
+  --glow-violet-intense: 0 0 30px rgba(140, 123, 255, 0.55), 0 0 60px rgba(140, 123, 255, 0.20), 0 0 100px rgba(140, 123, 255, 0.08);
+
+  --glow-sky-subtle:  0 0 6px rgba(82, 199, 255, 0.15);
+  --glow-sky-default: 0 0 12px rgba(82, 199, 255, 0.30);
+  --glow-sky-strong:  0 0 20px rgba(82, 199, 255, 0.45), 0 0 40px rgba(82, 199, 255, 0.15);
+  --glow-sky-intense: 0 0 30px rgba(82, 199, 255, 0.55), 0 0 60px rgba(82, 199, 255, 0.20), 0 0 100px rgba(82, 199, 255, 0.08);
+
+  --glow-amber-subtle:  0 0 6px rgba(210, 179, 94, 0.15);
+  --glow-amber-default: 0 0 12px rgba(210, 179, 94, 0.30);
+  --glow-amber-strong:  0 0 20px rgba(210, 179, 94, 0.45), 0 0 40px rgba(210, 179, 94, 0.15);
+  --glow-amber-intense: 0 0 30px rgba(210, 179, 94, 0.55), 0 0 60px rgba(210, 179, 94, 0.20), 0 0 100px rgba(210, 179, 94, 0.08);
+
+  /* ── Glow Composites (shadow + glow) ────────────────────────────────────── */
+  --glow-card-violet: 0 2px 4px -1px rgba(0,0,0,0.45), 0 0 20px rgba(140,123,255,0.25);
+  --glow-card-sky:    0 2px 4px -1px rgba(0,0,0,0.45), 0 0 20px rgba(82,199,255,0.25);
+  --glow-card-amber:  0 2px 4px -1px rgba(0,0,0,0.45), 0 0 20px rgba(210,179,94,0.25);
+
+  /* ── Glow Borders ───────────────────────────────────────────────────────── */
+  --glow-border-violet: inset 0 0 0 1px rgba(140, 123, 255, 0.30), 0 0 12px rgba(140, 123, 255, 0.20);
+  --glow-border-sky:    inset 0 0 0 1px rgba(82, 199, 255, 0.30), 0 0 12px rgba(82, 199, 255, 0.20);
+  --glow-border-amber:  inset 0 0 0 1px rgba(210, 179, 94, 0.30), 0 0 12px rgba(210, 179, 94, 0.20);
+
+  /* ── Gradients ──────────────────────────────────────────────────────────── */
+  --gradient-void-depth:  linear-gradient(180deg, #0D0D0F 0%, #080808 100%);
+  --gradient-violet-fade: linear-gradient(135deg, rgba(140,123,255,0.12) 0%, transparent 60%);
+  --gradient-sky-fade:    linear-gradient(135deg, rgba(82,199,255,0.10) 0%, transparent 60%);
+  --gradient-amber-fade:  linear-gradient(135deg, rgba(210,179,94,0.10) 0%, transparent 60%);
+  --gradient-hero-radial:  radial-gradient(ellipse at 50% 0%, rgba(140,123,255,0.15) 0%, rgba(82,199,255,0.05) 40%, transparent 70%);
+  --gradient-hero-mesh:    radial-gradient(at 20% 30%, rgba(140,123,255,0.12) 0%, transparent 50%), radial-gradient(at 80% 60%, rgba(82,199,255,0.08) 0%, transparent 50%), radial-gradient(at 50% 80%, rgba(210,179,94,0.06) 0%, transparent 50%);
+  --gradient-shimmer:      linear-gradient(90deg, transparent 0%, rgba(140,123,255,0.08) 25%, rgba(82,199,255,0.08) 50%, rgba(140,123,255,0.08) 75%, transparent 100%);
+
+  /* ── Animation ──────────────────────────────────────────────────────────── */
+  --duration-instant:   50ms;
+  --duration-fast:      100ms;
+  --duration-normal:    200ms;
+  --duration-slow:      350ms;
+  --duration-glacial:   600ms;
+  --duration-cinematic: 1000ms;
+
+  --ease-default:    cubic-bezier(0.4, 0.0, 0.2, 1);
+  --ease-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --ease-accelerate: cubic-bezier(0.4, 0.0, 1, 1);
+  --ease-sharp:      cubic-bezier(0.4, 0.0, 0.6, 1);
+  --ease-spring:     cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-arcane:     cubic-bezier(0.22, 0.68, 0.0, 1.04);
+
+  /* ── Z-Index ────────────────────────────────────────────────────────────── */
+  --z-base:     0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-popover:  500;
+  --z-toast:    600;
+  --z-tooltip:  700;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+ * §2  OBSIDIAN THEME OVERRIDES — Map tokens to Obsidian's internal variables
+ * ───────────────────────────────────────────────────────────────────────────── */
+
+.theme-dark {
+  /* ── Core Background ────────────────────────────────────────────────────── */
+  --background-primary:           var(--surface-base);
+  --background-primary-alt:       var(--surface-raised);
+  --background-secondary:         var(--surface-raised);
+  --background-secondary-alt:     var(--surface-elevated);
+  --background-modifier-border:   var(--border-default);
+  --background-modifier-form-field: var(--surface-elevated);
+  --background-modifier-form-field-highlighted: var(--surface-overlay);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.40);
+  --background-modifier-success:  var(--status-success-dim);
+  --background-modifier-error:    var(--status-error-dim);
+  --background-modifier-error-rgb: 127, 29, 29;
+  --background-modifier-error-hover: var(--status-error);
+  --background-modifier-cover:    var(--surface-scrim);
+
+  /* ── Text ───────────────────────────────────────────────────────────────── */
+  --text-normal:        var(--text-primary);
+  --text-muted:         var(--text-secondary);
+  --text-faint:         var(--text-muted);
+  --text-on-accent:     var(--on-primary);
+  --text-on-accent-inverted: var(--text-primary);
+  --text-error:         var(--status-error);
+  --text-success:       var(--status-success);
+  --text-selection:     var(--selected-bg);
+  --text-accent:        var(--primary);
+  --text-accent-hover:  var(--primary-hover);
+
+  /* ── Interactive ────────────────────────────────────────────────────────── */
+  --interactive-normal:  var(--surface-elevated);
+  --interactive-hover:   var(--surface-overlay);
+  --interactive-accent:  var(--primary);
+  --interactive-accent-hsl: 249, 100%, 74%;
+  --interactive-accent-hover: var(--primary-hover);
+
+  /* ── Scrollbar ──────────────────────────────────────────────────────────── */
+  --scrollbar-bg:           var(--surface-base);
+  --scrollbar-thumb-bg:     var(--void-600);
+  --scrollbar-active-thumb-bg: var(--void-500);
+
+  /* ── Typography ─────────────────────────────────────────────────────────── */
+  --font-text-theme:   var(--font-body);
+  --font-monospace-theme: var(--font-code);
+  --font-interface-theme: var(--font-body);
+  --font-text-size:    var(--text-base);
+  --line-height-normal: 1.57;
+
+  /* ── Headings ───────────────────────────────────────────────────────────── */
+  --h1-color: var(--violet-400);
+  --h2-color: var(--sky-400);
+  --h3-color: var(--amber-400);
+  --h4-color: var(--text-primary);
+  --h5-color: var(--text-secondary);
+  --h6-color: var(--text-muted);
+  --h1-font: var(--font-display);
+  --h2-font: var(--font-display);
+  --h3-font: var(--font-display);
+  --h1-size: var(--text-2xl);
+  --h2-size: var(--text-xl);
+  --h3-size: var(--text-lg);
+  --h4-size: var(--text-md);
+  --h5-size: var(--text-base);
+  --h6-size: var(--text-sm);
+  --h1-weight: var(--weight-bold);
+  --h2-weight: var(--weight-semibold);
+  --h3-weight: var(--weight-semibold);
+  --h1-line-height: var(--leading-2xl);
+  --h2-line-height: var(--leading-xl);
+  --h3-line-height: var(--leading-lg);
+
+  /* ── Tags ───────────────────────────────────────────────────────────────── */
+  --tag-color:            var(--violet-400);
+  --tag-color-hover:      var(--violet-300);
+  --tag-background:       var(--violet-900);
+  --tag-background-hover: var(--violet-800);
+  --tag-radius:           var(--radius-full);
+  --tag-padding-x:        8px;
+  --tag-padding-y:        2px;
+  --tag-size:             var(--text-xs);
+
+  /* ── Links ──────────────────────────────────────────────────────────────── */
+  --link-color:                var(--sky-500);
+  --link-color-hover:          var(--sky-400);
+  --link-unresolved-color:     var(--amber-500);
+  --link-unresolved-opacity:   0.7;
+  --link-external-color:       var(--sky-500);
+  --link-external-color-hover: var(--sky-400);
+
+  /* ── Code ───────────────────────────────────────────────────────────────── */
+  --code-normal:     var(--violet-400);
+  --code-background: var(--surface-elevated);
+  --code-size:       var(--text-sm);
+  --code-comment:    var(--void-300);
+  --code-function:   var(--sky-400);
+  --code-important:  var(--amber-400);
+  --code-keyword:    var(--violet-400);
+  --code-operator:   var(--text-secondary);
+  --code-property:   var(--sky-300);
+  --code-punctuation: var(--void-300);
+  --code-string:     var(--amber-300);
+  --code-tag:        var(--violet-400);
+  --code-value:      var(--amber-400);
+
+  /* ── Callouts ───────────────────────────────────────────────────────────── */
+  --callout-default:  var(--void-300);
+  --callout-bug:      var(--status-error);
+  --callout-error:    var(--status-error);
+  --callout-example:  var(--violet-500);
+  --callout-fail:     var(--status-error);
+  --callout-important: var(--amber-500);
+  --callout-info:     var(--sky-500);
+  --callout-question: var(--amber-500);
+  --callout-success:  var(--status-success);
+  --callout-summary:  var(--sky-400);
+  --callout-tip:      var(--sky-500);
+  --callout-todo:     var(--violet-500);
+  --callout-warning:  var(--status-warning);
+
+  /* ── Borders & Dividers ─────────────────────────────────────────────────── */
+  --hr-color: var(--border-default);
+  --table-border-color: var(--border-default);
+  --blockquote-border-color: var(--violet-700);
+  --blockquote-border-thickness: 3px;
+
+  /* ── Misc ────────────────────────────────────────────────────────────────── */
+  --icon-color:         var(--text-secondary);
+  --icon-color-hover:   var(--text-primary);
+  --icon-color-focused: var(--primary);
+  --nav-item-color:           var(--text-secondary);
+  --nav-item-color-hover:     var(--text-primary);
+  --nav-item-color-active:    var(--primary);
+  --nav-item-background-hover: var(--hover-overlay);
+  --nav-item-background-active: var(--selected-bg);
+
+  /* ── Tabs ────────────────────────────────────────────────────────────────── */
+  --tab-text-color:         var(--text-muted);
+  --tab-text-color-focused: var(--text-primary);
+  --tab-text-color-focused-active: var(--primary);
+  --tab-background-active:  var(--surface-base);
+
+  /* ── Checkboxes ─────────────────────────────────────────────────────────── */
+  --checkbox-color:          var(--primary);
+  --checkbox-color-hover:    var(--primary-hover);
+  --checkbox-border-color:   var(--border-default);
+  --checklist-done-color:    var(--text-muted);
+  --checklist-done-decoration: line-through;
+
+  /* ── Dataview ───────────────────────────────────────────────────────────── */
+  --dataview-key-color:   var(--text-muted);
+  --dataview-value-color: var(--text-primary);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+ * §3  KEYFRAME ANIMATIONS
+ * ───────────────────────────────────────────────────────────────────────────── */
+
+@keyframes hermetic-pulse-glow {
+  0%   { opacity: 0.6; }
+  50%  { opacity: 1.0; }
+  100% { opacity: 0.6; }
+}
+
+@keyframes hermetic-fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes hermetic-slide-up {
+  0%   { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hermetic-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+ * §4  DASHBOARD FRAMEWORK — Utility classes and panel architecture
+ *
+ *     Usage: Apply these classes inside Obsidian notes using cssclasses
+ *     frontmatter or within HTML blocks in markdown.
+ *
+ *     cssclasses: [hermetic-dashboard]
+ * ───────────────────────────────────────────────────────────────────────────── */
+
+/* ── Dashboard Root ───────────────────────────────────────────────────────── */
+.hermetic-dashboard {
+  --panel-cols: 3;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+}
+
+.hermetic-dashboard .markdown-preview-view {
+  padding: var(--space-4);
+  max-width: 100%;
+}
+
+/* ── Panel Grid ───────────────────────────────────────────────────────────── */
+.hermetic-dashboard .panel-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--panel-cols), 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .hermetic-dashboard .panel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hermetic-dashboard .panel-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Panel ────────────────────────────────────────────────────────────────── */
+.hermetic-dashboard .panel {
+  background: var(--surface-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-2);
+  transition: box-shadow var(--duration-slow) var(--ease-default),
+              border-color var(--duration-normal) var(--ease-default);
+}
+
+.hermetic-dashboard .panel:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-3);
+}
+
+.hermetic-dashboard .panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.hermetic-dashboard .panel-title {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hermetic-dashboard .panel-body {
+  font-size: var(--text-base);
+}
+
+/* ── Panel Variants ───────────────────────────────────────────────────────── */
+.hermetic-dashboard .panel--violet {
+  border-left: 3px solid var(--violet-500);
+  background: var(--gradient-violet-fade), var(--surface-raised);
+}
+
+.hermetic-dashboard .panel--sky {
+  border-left: 3px solid var(--sky-500);
+  background: var(--gradient-sky-fade), var(--surface-raised);
+}
+
+.hermetic-dashboard .panel--amber {
+  border-left: 3px solid var(--amber-500);
+  background: var(--gradient-amber-fade), var(--surface-raised);
+}
+
+.hermetic-dashboard .panel--glow-violet {
+  box-shadow: var(--glow-card-violet);
+  border-color: rgba(140, 123, 255, 0.20);
+}
+
+.hermetic-dashboard .panel--glow-sky {
+  box-shadow: var(--glow-card-sky);
+  border-color: rgba(82, 199, 255, 0.20);
+}
+
+.hermetic-dashboard .panel--glow-amber {
+  box-shadow: var(--glow-card-amber);
+  border-color: rgba(210, 179, 94, 0.20);
+}
+
+/* ── Metric Card ──────────────────────────────────────────────────────────── */
+.hermetic-dashboard .metric {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-height: 120px;
+  justify-content: center;
+}
+
+.hermetic-dashboard .metric-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hermetic-dashboard .metric-value {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.hermetic-dashboard .metric-delta {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+}
+
+.hermetic-dashboard .metric-delta--up {
+  color: var(--status-success);
+}
+
+.hermetic-dashboard .metric-delta--down {
+  color: var(--status-error);
+}
+
+.hermetic-dashboard .metric-delta--neutral {
+  color: var(--text-muted);
+}
+
+/* ── Status Badges ────────────────────────────────────────────────────────── */
+.hermetic-dashboard .badge {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hermetic-dashboard .badge--success {
+  background: var(--status-success-dim);
+  color: var(--status-success);
+}
+
+.hermetic-dashboard .badge--error {
+  background: var(--status-error-dim);
+  color: var(--status-error);
+}
+
+.hermetic-dashboard .badge--warning {
+  background: var(--status-warning-dim);
+  color: var(--status-warning);
+}
+
+.hermetic-dashboard .badge--info {
+  background: var(--status-info-dim);
+  color: var(--status-info);
+}
+
+.hermetic-dashboard .badge--primary {
+  background: var(--primary-subtle);
+  color: var(--primary);
+}
+
+/* ── Data Table ───────────────────────────────────────────────────────────── */
+.hermetic-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.hermetic-dashboard table th {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 2px solid var(--border-default);
+}
+
+.hermetic-dashboard table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+}
+
+.hermetic-dashboard table tr:hover td {
+  background: var(--hover-overlay);
+}
+
+/* ── Progress Bar ─────────────────────────────────────────────────────────── */
+.hermetic-dashboard .progress {
+  height: 6px;
+  background: var(--surface-elevated);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.hermetic-dashboard .progress-bar {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--duration-slow) var(--ease-default);
+}
+
+.hermetic-dashboard .progress-bar--violet { background: var(--violet-500); }
+.hermetic-dashboard .progress-bar--sky    { background: var(--sky-500); }
+.hermetic-dashboard .progress-bar--amber  { background: var(--amber-500); }
+
+/* ── Sparkline Container ──────────────────────────────────────────────────── */
+.hermetic-dashboard .sparkline {
+  height: 40px;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.hermetic-dashboard .sparkline-bar {
+  flex: 1;
+  min-width: 3px;
+  border-radius: 1px 1px 0 0;
+  background: var(--violet-600);
+  transition: height var(--duration-normal) var(--ease-default);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+ * §5  GLOBAL REFINEMENTS
+ * ───────────────────────────────────────────────────────────────────────────── */
+
+/* Smoother scrollbar */
+.theme-dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.theme-dark ::-webkit-scrollbar-track {
+  background: var(--surface-base);
+}
+
+.theme-dark ::-webkit-scrollbar-thumb {
+  background: var(--void-600);
+  border-radius: var(--radius-full);
+}
+
+.theme-dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--void-500);
+}
+
+/* Selection */
+.theme-dark ::selection {
+  background: rgba(140, 123, 255, 0.25);
+  color: var(--text-primary);
+}
+
+/* Focus ring standardization */
+.theme-dark *:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Inline code */
+.theme-dark code:not(pre code) {
+  background: var(--surface-elevated);
+  color: var(--violet-400);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-family: var(--font-code);
+}
+
+/* Blockquote styling */
+.theme-dark blockquote {
+  border-left: 3px solid var(--violet-700);
+  background: rgba(140, 123, 255, 0.04);
+  padding: var(--space-3) var(--space-4);
+  margin: var(--space-3) 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+/* Horizontal rule */
+.theme-dark hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--violet-700) 20%,
+    var(--void-500) 50%,
+    var(--violet-700) 80%,
+    transparent 100%
+  );
+  margin: var(--space-8) 0;
+}
+
+/* Callout refinements */
+.theme-dark .callout {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+  background: var(--surface-raised);
+}
+
+.theme-dark .callout-title {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+}
+
+/* File explorer refinements */
+.theme-dark .nav-file-title,
+.theme-dark .nav-folder-title {
+  font-size: var(--text-sm);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+/* Status bar */
+.theme-dark .status-bar {
+  background: var(--surface-raised);
+  border-top: 1px solid var(--border-default);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+/* Title bar */
+.theme-dark .titlebar {
+  background: var(--surface-base);
+  border-bottom: 1px solid var(--border-default);
+}
+
+/* Workspace tabs */
+.theme-dark .workspace-tab-header {
+  border-bottom: 1px solid var(--border-default);
+}
